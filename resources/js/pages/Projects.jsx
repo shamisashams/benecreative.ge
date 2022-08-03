@@ -22,6 +22,16 @@ import TextSlide from "../components/TextSlide";
 
 const Projects = ({ seo, category, active, indexx, portfolio, searched, images }) => {
     // console.log(searched, 'esaa');
+
+    const filterProject = () => {
+        if (active) {
+            return searched;
+        } else {
+            return portfolio.data;
+        }
+    }
+
+
     const renderHTML = (rawHTML) =>
         React.createElement("div", {
             dangerouslySetInnerHTML: { __html: rawHTML },
@@ -167,12 +177,22 @@ const Projects = ({ seo, category, active, indexx, portfolio, searched, images }
 
 
                     {
-                        portfolio.data.map((e, i) => {
+                        filterProject().map((e, i) => {
                             let bigimg = [0, 3, 6];
                             if (bigimg.some(e => e == i)) {
+                                // console.log(e.files[0], 'esaa');
+                                const img =
+                                    e.files[0] != null
+                                        ? "/" +
+                                        e.files[0].path +
+                                        "/" +
+                                        e.files[0].title
+                                        : null
+
+
                                 return (
                                     <div className="projectWrapper" key={i}>
-                                        <Link to="/">
+                                        <Link href={route("client.showsingleproject.show", e.id)}>
                                             <div className="opacity-50 text-lg mb-2">{e.name}</div>
                                             <div
                                                 data-aos="zoom-in-up"
@@ -185,7 +205,7 @@ const Projects = ({ seo, category, active, indexx, portfolio, searched, images }
                                                     // onMouseMove={perspectiveFunction}
                                                     style={{
                                                         transform: transform,
-                                                        backgroundImage: `url('/assets/images/projects/1.png')`,
+                                                        backgroundImage: `url(${img})`,
                                                     }}
                                                 ></div>
                                             </div>
@@ -193,10 +213,19 @@ const Projects = ({ seo, category, active, indexx, portfolio, searched, images }
                                     </div>
                                 )
                             } else {
+                                const img =
+                                    e.files[0] != null
+                                        ? "/" +
+                                        e.files[0].path +
+                                        "/" +
+                                        e.files[0].title
+                                        : null
+
+                                console.log(img, 'esaa');
                                 return (
                                     <div className="projectWrapper flex flex-col lg:flex-row  justify-between items-start lg:my-20" key={i}>
                                         <div className="lg:w-2/4 w-full lg:mr-10">
-                                            <Link className="lg:w-2/4 w-full lg:mr-10 " to="/">
+                                            <Link className="lg:w-2/4 w-full lg:mr-10 " href={route("client.showsingleproject.show", e.id)}>
                                                 <div className="opacity-50 text-lg mb-2">{e.name}</div>
                                                 <div
                                                     data-aos="zoom-in"
@@ -209,7 +238,8 @@ const Projects = ({ seo, category, active, indexx, portfolio, searched, images }
                                                         // onMouseMove={perspectiveFunction}
                                                         style={{
                                                             transform: transformReverse,
-                                                            backgroundImage: `url('/assets/images/projects/2.png')`,
+                                                            // backgroundImage: `url(${img})`,
+                                                            backgroundImage: `url(${img})`,
                                                         }}
                                                     ></div>
                                                 </div>

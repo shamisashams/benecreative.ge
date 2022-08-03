@@ -4150,6 +4150,14 @@ var Projects = function Projects(_ref) {
       images = _ref.images;
 
   // console.log(searched, 'esaa');
+  var filterProject = function filterProject() {
+    if (active) {
+      return searched;
+    } else {
+      return portfolio.data;
+    }
+  };
+
   var renderHTML = function renderHTML(rawHTML) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       dangerouslySetInnerHTML: {
@@ -4280,17 +4288,19 @@ var Projects = function Projects(_ref) {
     style: {
       top: "20%"
     }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_TextSlide__WEBPACK_IMPORTED_MODULE_4__["default"], null)), portfolio.data.map(function (e, i) {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_TextSlide__WEBPACK_IMPORTED_MODULE_4__["default"], null)), filterProject().map(function (e, i) {
     var bigimg = [0, 3, 6];
 
     if (bigimg.some(function (e) {
       return e == i;
     })) {
+      // console.log(e.files[0], 'esaa');
+      var img = e.files[0] != null ? "/" + e.files[0].path + "/" + e.files[0].title : null;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "projectWrapper",
         key: i
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
-        to: "/"
+        href: route("client.showsingleproject.show", e.id)
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "opacity-50 text-lg mb-2"
       }, e.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -4305,10 +4315,13 @@ var Projects = function Projects(_ref) {
         ,
         style: {
           transform: transform,
-          backgroundImage: "url('/assets/images/projects/1.png')"
+          backgroundImage: "url(".concat(img, ")")
         }
       }))));
     } else {
+      var _img = e.files[0] != null ? "/" + e.files[0].path + "/" + e.files[0].title : null;
+
+      console.log(_img, 'esaa');
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "projectWrapper flex flex-col lg:flex-row  justify-between items-start lg:my-20",
         key: i
@@ -4316,7 +4329,7 @@ var Projects = function Projects(_ref) {
         className: "lg:w-2/4 w-full lg:mr-10"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
         className: "lg:w-2/4 w-full lg:mr-10 ",
-        to: "/"
+        href: route("client.showsingleproject.show", e.id)
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "opacity-50 text-lg mb-2"
       }, e.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -4331,7 +4344,8 @@ var Projects = function Projects(_ref) {
         ,
         style: {
           transform: transformReverse,
-          backgroundImage: "url('/assets/images/projects/2.png')"
+          // backgroundImage: `url(${img})`,
+          backgroundImage: "url(".concat(_img, ")")
         }
       })))));
     }
