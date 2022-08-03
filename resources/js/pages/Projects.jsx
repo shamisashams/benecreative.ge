@@ -153,9 +153,9 @@ const Projects = ({
                                 href={
                                     i != 0
                                         ? route("client.projects.show", [
-                                              item.name,
-                                              i,
-                                          ])
+                                            item.name,
+                                            i,
+                                        ])
                                         : route("client.project.index")
                                 }
                                 className="fillup mb-2  text-zinc-500 xl:text-6xl lg:text-5xl md:text-4xl text-2xl block w-fit mx-auto uppercase transition "
@@ -202,9 +202,9 @@ const Projects = ({
                             const img =
                                 e.files[0] != null
                                     ? "/" +
-                                      e.files[0].path +
-                                      "/" +
-                                      e.files[0].title
+                                    e.files[0].path +
+                                    "/" +
+                                    e.files[0].title
                                     : null;
 
                             return (
@@ -242,9 +242,9 @@ const Projects = ({
                             const img =
                                 e.files[0] != null
                                     ? "/" +
-                                      e.files[0].path +
-                                      "/" +
-                                      e.files[0].title
+                                    e.files[0].path +
+                                    "/" +
+                                    e.files[0].title
                                     : null;
 
                             console.log(img, "esaa");
@@ -292,11 +292,20 @@ const Projects = ({
                     <button className=" mx-5 text-3xl">2</button>
                     <button className=" mx-5 text-3xl">3</button>
                 </div> */}
-                <div className="wrapper flex items-center justify-center pt-20">
-                    {linksPrev(portfolio.links)}
-                    <button className="">{links(portfolio.links)}</button>
-                    {linksNext(portfolio.links)}
-                </div>
+
+                {
+                    searched ?
+                        <div className="wrapper flex items-center justify-center pt-20">
+                            {linksPrev(searched.links)}
+                            <button className="">{links(searched.links)}</button>
+                            {linksNext(searched.links)}
+                        </div>
+                        : <div className="wrapper flex items-center justify-center pt-20">
+                            {linksPrev(portfolio.links)}
+                            <button className="">{links(portfolio.links)}</button>
+                            {linksNext(portfolio.links)}
+                        </div>
+                }
             </>
         </Layout>
     );

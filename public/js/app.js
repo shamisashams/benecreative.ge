@@ -4248,7 +4248,11 @@ var Projects = function Projects(_ref) {
         }
       }))));
     }
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  })), searched ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "wrapper flex items-center justify-center pt-20"
+  }, linksPrev(searched.links), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+    className: ""
+  }, links(searched.links)), linksNext(searched.links)) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "wrapper flex items-center justify-center pt-20"
   }, linksPrev(portfolio.links), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
     className: ""
