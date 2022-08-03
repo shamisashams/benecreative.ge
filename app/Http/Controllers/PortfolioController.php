@@ -185,7 +185,7 @@ class PortfolioController extends Controller
         $portfolio = Portfolio::where([
             ["status", 0],
             ["id", $slug]
-        ])->with(['files', 'translation', 'latestImage'])->get();
+        ])->with(['files', 'translations', 'latestImage'])->get();
 
         $categorysearch = Category::with('translations')->get();
         $categoryid = $categorysearch->where('id', $portfolio[0]->category_id)->first();

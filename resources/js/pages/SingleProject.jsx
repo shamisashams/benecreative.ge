@@ -13,7 +13,7 @@ import { otherProjects } from "../components/Data";
 import Layout from "../Layouts/Layout";
 
 const SingleProject = ({ seo, portfolio, category_name, sameproduct }) => {
-    // console.log(portfolio[0], 'esaa');
+    console.log(portfolio[0], 'esaa');
     // console.log(sameproduct, 'esaa');
     const [scrolled, setScrolled] = useState(0);
     const [transform, setTransform] = useState(``);
