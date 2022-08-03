@@ -12,7 +12,9 @@ import {
 import { otherProjects } from "../components/Data";
 import Layout from "../Layouts/Layout";
 
-const SingleProject = ({ seo }) => {
+const SingleProject = ({ seo, portfolio, category_name, sameproduct }) => {
+    // console.log(portfolio[0], 'esaa');
+    // console.log(sameproduct, 'esaa');
     const [scrolled, setScrolled] = useState(0);
     const [transform, setTransform] = useState(``);
     const showcase = useRef();
@@ -48,21 +50,21 @@ const SingleProject = ({ seo }) => {
                                     Customer
                                 </div>
                                 <div className="regular opacity-50 max-w-sm mb-5">
-                                    Name of company
+                                    {portfolio[0].name}
                                 </div>
                             </div>
                             <div>
                                 <div className="mr-32 regular text-custom-pink-500 uppercase">
                                     Duration
                                 </div>
-                                <div className="regular opacity-50 max-w-sm mb-5">2 month </div>
+                                <div className="regular opacity-50 max-w-sm mb-5">{portfolio[0].durations} </div>
                             </div>
                             <div>
                                 <div className="mr-32 regular text-custom-pink-500 uppercase">
                                     Category
                                 </div>
                                 <div className="regular opacity-50 max-w-sm mb-5">
-                                    Brand Platform & Identity Design
+                                    {category_name}
                                 </div>
                             </div>
                         </div>
@@ -78,11 +80,7 @@ const SingleProject = ({ seo }) => {
                         <div className="sm:w-2/3 sm:ml-10" data-aos="fade-down">
                             <div className="uppercase mb-5 regular mt-3">About project</div>
                             <p className="opacity-50 text-justify regular leading-relaxed">
-                                We see every project as a chance to “leave our footprint” and
-                                explore unique motion design techniques. We works with agencies
-                                and direct clients: furthermore our experienced team can manage
-                                any stage of production. We see every project as a chance to
-                                “leave our footprint” and explore unique motion design techniques.
+                                {portfolio[0].about_project}
                             </p>
                         </div>
                     </div>
@@ -93,15 +91,19 @@ const SingleProject = ({ seo }) => {
                 >
                     <div className="absolute h-96 w-full left-0 top-0 bg-gradient-to-b from-black to-transparent"></div>
                     <div className="absolute h-96 w-full left-0 bottom-0 bg-gradient-to-t from-black to-transparent group-hover:scale-y-0 transiton-all duration-500 origin-bottom"></div>
-                    <iframe
-                        width="100%"
-                        height="100%"
-                        src="https://www.youtube.com/embed/X6hSNaF9-fU"
-                        title="YouTube video player"
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                    ></iframe>
+                    {portfolio[0].video_url &&
+                        <iframe
+                            width="100%"
+                            height="100%"
+                            src={portfolio[0].video_url}
+                            title="YouTube video player"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                        ></iframe>
+                    }
+
+
                 </section>
                 <section className="py-20 text-center">
                     <div data-aos="fade-up" className="uppercase text-4xl mb-10">
@@ -114,7 +116,7 @@ const SingleProject = ({ seo }) => {
                         direction
                     </div>
                     <div data-aos="fade-up" className="opacity-50 text-xl regular mb-5">
-                        Name Surname
+                        {portfolio[0].direction}
                     </div>
                     <div
                         data-aos="fade-up"
@@ -123,7 +125,7 @@ const SingleProject = ({ seo }) => {
                         design
                     </div>
                     <div data-aos="fade-up" className="opacity-50 text-xl regular mb-5">
-                        Name Surname
+                        {portfolio[0].design}
                     </div>
                     <div
                         data-aos="fade-up"
@@ -132,7 +134,7 @@ const SingleProject = ({ seo }) => {
                         animation
                     </div>
                     <div data-aos="fade-up" className="opacity-50 text-xl regular mb-5">
-                        Name Surname
+                        {portfolio[0].animation}
                     </div>
                     <div
                         data-aos="fade-up"
@@ -141,98 +143,69 @@ const SingleProject = ({ seo }) => {
                         music & sound design
                     </div>
                     <div data-aos="fade-up" className="opacity-50 text-xl regular mb-5">
-                        Name Surname
+                        {portfolio[0].music}
                     </div>
                 </section>
-                <MouseParallaxContainer
-                    enableCSSTransition
-                    useWindowMouseEvents
-                    className="parallax projectWrapper text-center"
-                >
-                    <MouseParallaxChild
-                        factorX={0.07}
-                        factorY={0.07}
-                        className="inline-block w-full h-auto mb-10"
-                    >
+                <div className="parallax projectWrapper text-center">
+
+
+                    {portfolio[0].files.map((e, i) => {
+                        console.log(e);
+                        const img =
+                            e != null
+                                ? "/" +
+                                e.path +
+                                "/" +
+                                e.title
+                                : null
+                        return (
+                            // <h2>asdsad</h2>
+                            <div className="inline-block w-full h-auto mb-10" key={i}>
+                                <img
+                                    data-aos="zoom-in"
+                                    className="w-full h-full object-cover"
+                                    src={img}
+                                    alt="err"
+                                />
+                            </div>
+                        )
+                    })}
+
+                    {/* <div className="inline-block w-full h-auto mb-10">
                         <img
                             data-aos="zoom-in"
                             className="w-full h-full object-cover"
                             src={'/assets/images/projects/1.png'}
-                            alt=""
+                            alt="err"
                         />
-                    </MouseParallaxChild>
-                    <MouseParallaxChild
-                        factorX={0.04}
-                        factorY={0.06}
-                        className="inline-block sm:w-1/2 w-full sm:h-96 h-60 mb-10 "
-                    >
+                    </div>
+                    <div className="inline-block sm:w-1/2 w-full sm:h-96 h-60 mb-10 ">
                         <img
-                            data-aos="zoom-in"
                             className="w-full h-full object-cover"
                             src={'/assets/images/projects/1.png'}
-                            alt=""
+                            alt="err"
                         />
-                    </MouseParallaxChild>
-                    <MouseParallaxChild
-                        factorX={0.08}
-                        factorY={0.03}
-                        className="inline-block sm:w-1/3 w-full sm:h-96 h-60 mb-10  sm:ml-5"
-                    >
-                        <img
-                            data-aos="zoom-in"
-                            className="w-full h-full object-cover"
-                            src={'/assets/images/projects/7.png'}
-                            alt=""
-                        />
-                    </MouseParallaxChild>
-                    <MouseParallaxChild
-                        factorX={0.05}
-                        factorY={0.07}
-                        className="inline-block w-full h-auto mb-10"
-                    >
-                        <img
-                            data-aos="zoom-in"
-                            className="w-full h-full object-cover"
-                            src={'/assets/images/projects/1.png'}
-                            alt=""
-                        />
-                    </MouseParallaxChild>
-                    <MouseParallaxChild
-                        factorX={0.07}
-                        factorY={0.04}
-                        className="inline-block sm:w-1/3 w-full sm:h-96 h-60 mb-10 "
-                    >
-                        <img
-                            data-aos="zoom-in"
-                            className="w-full h-full object-cover"
-                            src={'/assets/images/projects/7.png'}
-                            alt=""
-                        />
-                    </MouseParallaxChild>
-                    <MouseParallaxChild
-                        factorX={0.05}
-                        factorY={0.03}
-                        className="inline-block sm:w-1/2 w-full sm:h-96 h-60 mb-10  sm:ml-5"
-                    >
-                        <img
-                            data-aos="zoom-in"
-                            className="w-full h-full object-cover"
-                            src={'/assets/images/projects/6.png'}
-                            alt=""
-                        />
-                    </MouseParallaxChild>
-                </MouseParallaxContainer>
+                    </div> */}
+
+
+
+                </div>
                 <section className="projectWrapper py-20">
                     <div className="text-center uppercase text-4xl mb-10">
                         other projects
                     </div>
                     <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-16 mb-20">
-                        {otherProjects.map((item, index) => {
+                        {sameproduct.map((item, index) => {
                             return (
                                 <Link to={item.link} key={index}>
                                     <div className="w-full h-60 mb-5 overflow-hidden">
                                         <img
-                                            src={item.img}
+                                            src={item.files[0] != null
+                                                ? "/" +
+                                                item.files[0].path +
+                                                "/" +
+                                                item.files[0].title
+                                                : null}
                                             alt=""
                                             className="w-full h-full object-cover transition-all duration-700 hover:scale-125"
                                         />
@@ -246,7 +219,7 @@ const SingleProject = ({ seo }) => {
                     </div>
                 </section>
             </div>
-        </Layout>
+        </Layout >
     );
 };
 

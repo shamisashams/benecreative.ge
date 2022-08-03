@@ -185,14 +185,19 @@ class PortfolioController extends Controller
         $portfolio = Portfolio::where([
             ["status", 0],
             ["id", $slug]
-        ])->with(['files', 'translations', 'latestImage'])->get();
-        // dd($portfolio);
+        ])->with(['files', 'translation', 'latestImage'])->get();
+
+        $categorysearch = Category::with('translations')->get();
+        $categoryid = $categorysearch->where('id', $portfolio[0]->category_id)->first();
+        // dd($categoryid->name);
         return Inertia::render(
             'SingleProject',
             [
                 // "product" => Product::with('latestImage')->where('category_id', ('7'))->paginate(10),
                 "category" => Category::with('translations')->get(),
+                "sameproduct" => Portfolio::where('id', '!=', $slug)->with('files')->latest()->limit(6)->get(),
                 "portfolio" => $portfolio,
+                "category_name" => $categoryid->name,
                 // "product" => Product::with(['latestImage', 'translations'])->where("category_id", 1)->paginate(10),
                 "page" => $page,
                 "seo" => [

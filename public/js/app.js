@@ -4480,8 +4480,13 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 var SingleProject = function SingleProject(_ref) {
-  var seo = _ref.seo;
+  var seo = _ref.seo,
+      portfolio = _ref.portfolio,
+      category_name = _ref.category_name,
+      sameproduct = _ref.sameproduct;
 
+  // console.log(portfolio[0], 'esaa');
+  // console.log(sameproduct, 'esaa');
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
       _useState2 = _slicedToArray(_useState, 2),
       scrolled = _useState2[0],
@@ -4526,15 +4531,15 @@ var SingleProject = function SingleProject(_ref) {
     className: "mr-32 regular text-custom-pink-500 uppercase"
   }, "Customer"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "regular opacity-50 max-w-sm mb-5"
-  }, "Name of company")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, portfolio[0].name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "mr-32 regular text-custom-pink-500 uppercase"
   }, "Duration"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "regular opacity-50 max-w-sm mb-5"
-  }, "2 month ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, portfolio[0].durations, " ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "mr-32 regular text-custom-pink-500 uppercase"
   }, "Category"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "regular opacity-50 max-w-sm mb-5"
-  }, "Brand Platform & Identity Design")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, category_name)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "flex items-start justify-between wrapper flex-col sm:flex-row"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
     className: "xl:text-9xl xl:text-8xl lg:text-7xl text-5xl uppercase sm:w-1/2   mb-5",
@@ -4549,17 +4554,17 @@ var SingleProject = function SingleProject(_ref) {
     className: "uppercase mb-5 regular mt-3"
   }, "About project"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
     className: "opacity-50 text-justify regular leading-relaxed"
-  }, "We see every project as a chance to \u201Cleave our footprint\u201D and explore unique motion design techniques. We works with agencies and direct clients: furthermore our experienced team can manage any stage of production. We see every project as a chance to \u201Cleave our footprint\u201D and explore unique motion design techniques.")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", {
+  }, portfolio[0].about_project)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", {
     ref: video,
     className: "w-screen h-screen relative  group transition-all duration-1000"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "absolute h-96 w-full left-0 top-0 bg-gradient-to-b from-black to-transparent"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "absolute h-96 w-full left-0 bottom-0 bg-gradient-to-t from-black to-transparent group-hover:scale-y-0 transiton-all duration-500 origin-bottom"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("iframe", {
+  }), portfolio[0].video_url && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("iframe", {
     width: "100%",
     height: "100%",
-    src: "https://www.youtube.com/embed/X6hSNaF9-fU",
+    src: portfolio[0].video_url,
     title: "YouTube video player",
     frameBorder: "0",
     allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
@@ -4575,96 +4580,56 @@ var SingleProject = function SingleProject(_ref) {
   }, "direction"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     "data-aos": "fade-up",
     className: "opacity-50 text-xl regular mb-5"
-  }, "Name Surname"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, portfolio[0].direction), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     "data-aos": "fade-up",
     className: "regular text-custom-pink-500 uppercase mb-1 text-2xl"
   }, "design"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     "data-aos": "fade-up",
     className: "opacity-50 text-xl regular mb-5"
-  }, "Name Surname"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, portfolio[0].design), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     "data-aos": "fade-up",
     className: "regular text-custom-pink-500 uppercase mb-1 text-2xl"
   }, "animation"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     "data-aos": "fade-up",
     className: "opacity-50 text-xl regular mb-5"
-  }, "Name Surname"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, portfolio[0].animation), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     "data-aos": "fade-up",
     className: "regular text-custom-pink-500 uppercase mb-1 text-2xl"
   }, "music & sound design"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     "data-aos": "fade-up",
     className: "opacity-50 text-xl regular mb-5"
-  }, "Name Surname")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_parallax_mouse__WEBPACK_IMPORTED_MODULE_2__.MouseParallaxContainer, {
-    enableCSSTransition: true,
-    useWindowMouseEvents: true,
+  }, portfolio[0].music)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "parallax projectWrapper text-center"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_parallax_mouse__WEBPACK_IMPORTED_MODULE_2__.MouseParallaxChild, {
-    factorX: 0.07,
-    factorY: 0.07,
-    className: "inline-block w-full h-auto mb-10"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-    "data-aos": "zoom-in",
-    className: "w-full h-full object-cover",
-    src: '/assets/images/projects/1.png',
-    alt: ""
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_parallax_mouse__WEBPACK_IMPORTED_MODULE_2__.MouseParallaxChild, {
-    factorX: 0.04,
-    factorY: 0.06,
-    className: "inline-block sm:w-1/2 w-full sm:h-96 h-60 mb-10 "
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-    "data-aos": "zoom-in",
-    className: "w-full h-full object-cover",
-    src: '/assets/images/projects/1.png',
-    alt: ""
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_parallax_mouse__WEBPACK_IMPORTED_MODULE_2__.MouseParallaxChild, {
-    factorX: 0.08,
-    factorY: 0.03,
-    className: "inline-block sm:w-1/3 w-full sm:h-96 h-60 mb-10  sm:ml-5"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-    "data-aos": "zoom-in",
-    className: "w-full h-full object-cover",
-    src: '/assets/images/projects/7.png',
-    alt: ""
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_parallax_mouse__WEBPACK_IMPORTED_MODULE_2__.MouseParallaxChild, {
-    factorX: 0.05,
-    factorY: 0.07,
-    className: "inline-block w-full h-auto mb-10"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-    "data-aos": "zoom-in",
-    className: "w-full h-full object-cover",
-    src: '/assets/images/projects/1.png',
-    alt: ""
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_parallax_mouse__WEBPACK_IMPORTED_MODULE_2__.MouseParallaxChild, {
-    factorX: 0.07,
-    factorY: 0.04,
-    className: "inline-block sm:w-1/3 w-full sm:h-96 h-60 mb-10 "
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-    "data-aos": "zoom-in",
-    className: "w-full h-full object-cover",
-    src: '/assets/images/projects/7.png',
-    alt: ""
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_parallax_mouse__WEBPACK_IMPORTED_MODULE_2__.MouseParallaxChild, {
-    factorX: 0.05,
-    factorY: 0.03,
-    className: "inline-block sm:w-1/2 w-full sm:h-96 h-60 mb-10  sm:ml-5"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-    "data-aos": "zoom-in",
-    className: "w-full h-full object-cover",
-    src: '/assets/images/projects/6.png',
-    alt: ""
-  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", {
+  }, portfolio[0].files.map(function (e, i) {
+    console.log(e);
+    var img = e != null ? "/" + e.path + "/" + e.title : null;
+    return (
+      /*#__PURE__*/
+      // <h2>asdsad</h2>
+      react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "inline-block w-full h-auto mb-10",
+        key: i
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+        "data-aos": "zoom-in",
+        className: "w-full h-full object-cover",
+        src: img,
+        alt: "err"
+      }))
+    );
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", {
     className: "projectWrapper py-20"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "text-center uppercase text-4xl mb-10"
   }, "other projects"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "grid lg:grid-cols-3 md:grid-cols-2 gap-16 mb-20"
-  }, _components_Data__WEBPACK_IMPORTED_MODULE_3__.otherProjects.map(function (item, index) {
+  }, sameproduct.map(function (item, index) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
       to: item.link,
       key: index
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       className: "w-full h-60 mb-5 overflow-hidden"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-      src: item.img,
+      src: item.files[0] != null ? "/" + item.files[0].path + "/" + item.files[0].title : null,
       alt: "",
       className: "w-full h-full object-cover transition-all duration-700 hover:scale-125"
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
