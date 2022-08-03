@@ -1,5 +1,5 @@
-import { Link, usePage } from '@inertiajs/inertia-react'
-import React from 'react';
+import { Link, usePage } from "@inertiajs/inertia-react";
+import React from "react";
 // import HeroBg from "../assets/images/bg/1.png";
 import { FiArrowRight } from "react-icons/fi";
 import { useRef, useState } from "react";
@@ -20,12 +20,19 @@ import {
 // import img9 from "../assets/images/projects/9.png";
 import TextSlide from "../components/TextSlide";
 import Layout from "../Layouts/Layout";
-import { Route } from 'react-router-dom';
+import { Route } from "react-router-dom";
 
-const Home = ({ seo, category, active, indexx, portfolio, searched, images }) => {
-
+const Home = ({
+    seo,
+    category,
+    active,
+    indexx,
+    portfolio,
+    searched,
+    images,
+}) => {
     // console.log(indexx, active, 'esaa');
-    console.log(searched, 'esaa');
+    console.log(searched, "esaa");
     // console.log(images);
 
     const renderHTML = (rawHTML) =>
@@ -41,16 +48,13 @@ const Home = ({ seo, category, active, indexx, portfolio, searched, images }) =>
     ];
 
     category.map((e) => {
-        projectLinks.push(
-            {
-                link: '',
-                name: e.name,
-            }
-        )
-    })
+        projectLinks.push({
+            link: "",
+            name: e.name,
+        });
+    });
 
     const [activeLink, setActiveLink] = useState(indexx ? indexx : 0);
-
 
     const [transform, setTransform] = useState("translate3d(0, 0, 0)");
     const [transformReverse, setTransformReverse] = useState(
@@ -85,12 +89,21 @@ const Home = ({ seo, category, active, indexx, portfolio, searched, images }) =>
                     />
                     <div className="absolute left-0 bottom-0 w-full h-96 bg-gradient-to-t from-black to-transparent"></div>
                     <div className="wrapper h-full flex flex-col justify-end items-start z-20 relative pb-20">
-                        <div className="opacity-50 text-3xl h-fit"> {__("client.home_main_title", sharedData)}</div>
+                        <div className="opacity-50 text-3xl h-fit">
+                            {" "}
+                            {__("client.home_main_title", sharedData)}
+                        </div>
                         <h1 className="lg:text-6xl lg:leading-tight text-4xl mt-4 mb-8  h-fit">
-                            {renderHTML(__('client.home_main_text', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))}
+                            {renderHTML(
+                                __("client.home_main_text", sharedData).replace(
+                                    /(?:\r\n|\r|\n)/g,
+                                    "<br>"
+                                )
+                            )}
                         </h1>
                         <Link href="/" className="regular">
-                            Learn more <FiArrowRight className="inline-block h-5 w-5" />
+                            Learn more{" "}
+                            <FiArrowRight className="inline-block h-5 w-5" />
                         </Link>
                     </div>
                 </section>
@@ -100,7 +113,14 @@ const Home = ({ seo, category, active, indexx, portfolio, searched, images }) =>
                             <Link
                                 data-aos="fade-up"
                                 key={i}
-                                href={i != 0 ? route("client.project.show", [item.name, i]) : route("client.home.index")}
+                                href={
+                                    i != 0
+                                        ? route("client.project.show", [
+                                              item.name,
+                                              i,
+                                          ])
+                                        : route("client.home.index")
+                                }
                                 className="fillup mb-2  text-zinc-500 xl:text-6xl lg:text-5xl md:text-4xl text-2xl block w-fit mx-auto uppercase transition "
                                 style={{
                                     color: activeLink == i ? "#E9776D" : "",
@@ -124,7 +144,10 @@ const Home = ({ seo, category, active, indexx, portfolio, searched, images }) =>
                     useWindowMouseEvents
                     className="parallax py-20  relative"
                 >
-                    <div className="absolute left-0  w-full -z-10" style={{ top: "20%" }}>
+                    <div
+                        className="absolute left-0  w-full -z-10"
+                        style={{ top: "20%" }}
+                    >
                         <TextSlide />
                     </div>
                     <MouseParallaxChild
@@ -133,7 +156,9 @@ const Home = ({ seo, category, active, indexx, portfolio, searched, images }) =>
                         factorY={0.05}
                     >
                         <Link href="/single-project">
-                            <div className="opacity-50 text-lg mb-2">Project Name</div>
+                            <div className="opacity-50 text-lg mb-2">
+                                Project Name
+                            </div>
                             <div
                                 data-aos="zoom-in-up"
                                 className="w-full overflow-hidden relative perspectiveImageContainer"
@@ -161,8 +186,13 @@ const Home = ({ seo, category, active, indexx, portfolio, searched, images }) =>
                             factorX={0.06}
                             factorY={0.9}
                         >
-                            <Link className="lg:w-2/3 w-full lg:mr-10 " href="/">
-                                <div className="opacity-50 text-lg mb-2">Project Name</div>
+                            <Link
+                                className="lg:w-2/3 w-full lg:mr-10 "
+                                href="/"
+                            >
+                                <div className="opacity-50 text-lg mb-2">
+                                    Project Name
+                                </div>
                                 <div
                                     data-aos="zoom-in"
                                     className="w-full overflow-hidden relative perspectiveImageContainer"
@@ -186,7 +216,9 @@ const Home = ({ seo, category, active, indexx, portfolio, searched, images }) =>
                             factorY={0.7}
                         >
                             <Link className="lg:w-1/2 w-full " href="/">
-                                <div className="opacity-50 text-lg mb-2">Project Name</div>
+                                <div className="opacity-50 text-lg mb-2">
+                                    Project Name
+                                </div>
                                 <div
                                     data-aos="zoom-out"
                                     className="w-full overflow-hidden relative perspectiveImageContainer"
@@ -211,7 +243,9 @@ const Home = ({ seo, category, active, indexx, portfolio, searched, images }) =>
                         factorY={0.1}
                     >
                         <Link href="/single-project">
-                            <div className="opacity-50 text-lg mb-2">Project Name</div>
+                            <div className="opacity-50 text-lg mb-2">
+                                Project Name
+                            </div>
                             <div
                                 data-aos="fade-up"
                                 className="w-full overflow-hidden relative perspectiveImageContainer"
@@ -239,8 +273,13 @@ const Home = ({ seo, category, active, indexx, portfolio, searched, images }) =>
                             factorX={0.06}
                             factorY={0.9}
                         >
-                            <Link className="lg:w-2/3 w-full lg:mr-10 " href="/">
-                                <div className="opacity-50 text-lg mb-2">Project Name</div>
+                            <Link
+                                className="lg:w-2/3 w-full lg:mr-10 "
+                                href="/"
+                            >
+                                <div className="opacity-50 text-lg mb-2">
+                                    Project Name
+                                </div>
                                 <div
                                     data-aos="zoom-in"
                                     className="w-full overflow-hidden relative perspectiveImageContainer"
@@ -264,7 +303,9 @@ const Home = ({ seo, category, active, indexx, portfolio, searched, images }) =>
                             factorY={0.07}
                         >
                             <Link className="lg:w-1/2 w-full " href="/">
-                                <div className="opacity-50 text-lg mb-2">Project Name</div>
+                                <div className="opacity-50 text-lg mb-2">
+                                    Project Name
+                                </div>
                                 <div
                                     data-aos="zoom-out"
                                     className="w-full overflow-hidden relative perspectiveImageContainer"
@@ -289,7 +330,9 @@ const Home = ({ seo, category, active, indexx, portfolio, searched, images }) =>
                         factorY={0.1}
                     >
                         <Link href="/single-project">
-                            <div className="opacity-50 text-lg mb-2">Project Name</div>
+                            <div className="opacity-50 text-lg mb-2">
+                                Project Name
+                            </div>
                             <div
                                 data-aos="fade-up"
                                 className="w-full overflow-hidden relative perspectiveImageContainer"
@@ -317,8 +360,13 @@ const Home = ({ seo, category, active, indexx, portfolio, searched, images }) =>
                             factorX={0.06}
                             factorY={0.9}
                         >
-                            <Link className="lg:w-2/3 w-full lg:mr-10 " href="/">
-                                <div className="opacity-50 text-lg mb-2">Project Name</div>
+                            <Link
+                                className="lg:w-2/3 w-full lg:mr-10 "
+                                href="/"
+                            >
+                                <div className="opacity-50 text-lg mb-2">
+                                    Project Name
+                                </div>
                                 <div
                                     data-aos="zoom-in"
                                     className="w-full overflow-hidden relative perspectiveImageContainer"
@@ -342,7 +390,9 @@ const Home = ({ seo, category, active, indexx, portfolio, searched, images }) =>
                             factorY={0.07}
                         >
                             <Link className="lg:w-1/2 w-full " href="/">
-                                <div className="opacity-50 text-lg mb-2">Project Name</div>
+                                <div className="opacity-50 text-lg mb-2">
+                                    Project Name
+                                </div>
                                 <div
                                     data-aos="zoom-out"
                                     className="w-full overflow-hidden relative perspectiveImageContainer"
@@ -364,12 +414,14 @@ const Home = ({ seo, category, active, indexx, portfolio, searched, images }) =>
                 </MouseParallaxContainer>
 
                 <div className="wrapper flex items-center justify-center pb-20">
-                    <button className="text-custom-pink-500 mx-3 p-2 text-3xl">1</button>
+                    <button className="text-custom-pink-500 mx-3 p-2 text-3xl">
+                        1
+                    </button>
                     <button className=" mx-5 text-3xl">2</button>
                     <button className=" mx-5 text-3xl">3</button>
                 </div>
             </>
-        </Layout >
+        </Layout>
     );
 };
 
