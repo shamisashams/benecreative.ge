@@ -3177,7 +3177,8 @@ var About = function About(_ref) {
   var seo = _ref.seo,
       partners = _ref.partners,
       team = _ref.team,
-      category = _ref.category;
+      category = _ref.category,
+      images = _ref.images;
   console.log(category);
 
   var renderHTML = function renderHTML(rawHTML) {
@@ -3265,7 +3266,7 @@ var About = function About(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", {
     "data-aos": "zoom-in-up"
   }, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("img", {
-    src: '/assets/images/bg/2.png',
+    src: images[0],
     className: "absolute left-1/2 -translate-x-1/2 top-24 -z-10 ",
     alt: ""
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", {

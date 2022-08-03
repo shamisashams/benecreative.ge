@@ -9,7 +9,7 @@ import { partners, team } from "../components/Data";
 // import { projectLinks } from "../components/Data";
 import Layout from "../Layouts/Layout";
 
-const About = ({ seo, partners, team, category }) => {
+const About = ({ seo, partners, team, category, images }) => {
     console.log(category);
 
     const renderHTML = (rawHTML) => React.createElement("div", { dangerouslySetInnerHTML: { __html: rawHTML } });
@@ -95,7 +95,7 @@ const About = ({ seo, partners, team, category }) => {
                     <div data-aos="zoom-in-up">
                         {" "}
                         <img
-                            src={'/assets/images/bg/2.png'}
+                            src={images[0]}
                             className="absolute left-1/2 -translate-x-1/2 top-24 -z-10 "
                             alt=""
                         />
