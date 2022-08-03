@@ -270,7 +270,7 @@ const Home = ({
                                     e.files[0].title
                                     : null;
 
-                            console.log(img, "esaa");
+                            // console.log(img, "esaa");
                             return (
                                 <div
                                     key={i}

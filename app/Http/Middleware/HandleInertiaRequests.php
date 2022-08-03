@@ -136,8 +136,9 @@ class HandleInertiaRequests extends Middleware
         $gphone = "";
         $gemail = "";
         $gaddress = "";
-        $gcity = "";
-        $gcountry = "";
+        $gtwitter = "";
+        // $gcity = "";
+        // $gcountry = "";
         $ginstagram = "";
         $gfacebook = "";
         $gbehance = "";
@@ -161,10 +162,13 @@ class HandleInertiaRequests extends Middleware
                 case "facebook":
                     $gfacebook = $setting;
                     break;
-                case "city":
+                case "twitter":
+                    $gtwitter = $setting;
+                    break;
+                case "behance":
                     $gbehance = $setting;
                     break;
-                case "country":
+                case "dribbble":
                     $gdribbble = $setting;
                     break;
             }
@@ -177,7 +181,8 @@ class HandleInertiaRequests extends Middleware
             "ginstagram" => $ginstagram,
             "gfacebook" => $gfacebook,
             "gbehance" => $gbehance,
-            "gdribbble" => $gdribbble
+            "gdribbble" => $gdribbble,
+            "gtwitter" => $gtwitter,
         ]);
     }
 }

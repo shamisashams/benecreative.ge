@@ -1,11 +1,37 @@
 import React from "react";
 import { FiArrowRight } from "react-icons/fi";
-import { contactInfo, socialMedia } from "../components/Data";
+import { contactInfo } from "../components/Data";
 import Layout from "../Layouts/Layout";
 import { Link, usePage } from "@inertiajs/inertia-react";
 
 const Contact = ({ seo }) => {
-    const { errors, gphone, gemail, gaddress, gfacebook, ginstagram, gtwitter, gbehence, gdribbble } = usePage().props;
+
+
+    const { errors, gphone, gemail, gaddress, gfacebook, ginstagram, gtwitter, gbehance, gdribbble } = usePage().props;
+
+    const socialMedia = [
+        {
+            icon: "/assets/images/sm/fb.svg",
+            link: gfacebook.value,
+        },
+        {
+            icon: "/assets/images/sm/tw.svg",
+            link: gtwitter.value,
+        },
+        {
+            icon: "/assets/images/sm/ig.svg",
+            link: ginstagram.value,
+
+        },
+        {
+            icon: "/assets/images/sm/dr.svg",
+            link: gbehance.value,
+        },
+        {
+            icon: "/assets/images/sm/be.svg",
+            link: gdribbble.value,
+        },
+    ];
     const renderHTML = (rawHTML) =>
         React.createElement("div", {
             dangerouslySetInnerHTML: { __html: rawHTML },
@@ -104,11 +130,13 @@ const Contact = ({ seo }) => {
                         </div>
                         <div className=" flex items-center justify-start ">
                             {socialMedia.map((sm, index) => {
-                                return (
-                                    <a href={sm.link} key={index} className="mr-5">
-                                        <img src={sm.icon} alt="" className="h-5" />
-                                    </a>
-                                );
+                                if (sm.link) {
+                                    return (
+                                        <a href={sm.link} key={index} className={` mx-3  `}>
+                                            <img src={sm.icon} alt="" className="h-5" />
+                                        </a>
+                                    );
+                                }
                             })}
                         </div>
                     </div>

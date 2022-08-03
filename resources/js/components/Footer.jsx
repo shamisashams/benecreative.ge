@@ -1,13 +1,61 @@
 // import Logo from "../assets/images/logo/1.png";
 import React from "react";
-import { socialMedia } from "./Data";
 // import { Link, useLocation } from "react-router-dom";
 import { Link, usePage } from "@inertiajs/inertia-react";
 
 const Footer = ({ seo, page, }) => {
     const { pathname } = usePage().props;
     // const { errors, gphone, gemail, gaddress } = usePage().props;
-    const { errors, gphone, gemail, gaddress, gfacebook, ginstagram, gtwitter, gbehence, gdribbble } = usePage().props;
+    const { errors, gphone, gemail, gaddress, gfacebook, ginstagram, gtwitter, gbehance, gdribbble } = usePage().props;
+
+    const socialMedia = [
+        {
+            icon: "/assets/images/sm/fb.svg",
+            link: gfacebook.value,
+        },
+        {
+            icon: "/assets/images/sm/tw.svg",
+            link: gtwitter.value,
+        },
+        {
+            icon: "/assets/images/sm/ig.svg",
+            link: ginstagram.value,
+
+        },
+        {
+            icon: "/assets/images/sm/dr.svg",
+            link: gbehance.value,
+        },
+        {
+            icon: "/assets/images/sm/be.svg",
+            link: gdribbble.value,
+        },
+    ];
+
+
+    // const socialMedia = [
+    //     {
+    //         icon: "/assets/images/sm/fb.svg",
+    //         link: "#",
+    //     },
+    //     {
+    //         icon: "/assets/images/sm/tw.svg",
+    //         link: "#",
+    //     },
+    //     {
+    //         icon: "/assets/images/sm/ig.svg",
+    //         link: "#",
+    //     },
+    //     {
+    //         icon: "/assets/images/sm/dr.svg",
+    //         link: "#",
+    //     },
+    //     {
+    //         icon: "/assets/images/sm/be.svg",
+    //         link: "#",
+    //     },
+    // ];
+
     const contactInfo = {
         email: gemail.value,
         tel: gphone.value,
@@ -31,11 +79,13 @@ const Footer = ({ seo, page, }) => {
 
             <div className=" flex items-center justify-center mb-8">
                 {socialMedia.map((sm, index) => {
-                    return (
-                        <a href={sm.link} key={index} className={` mx-3  `}>
-                            <img src={sm.icon} alt="" className="h-5" />
-                        </a>
-                    );
+                    if (sm.link) {
+                        return (
+                            <a href={sm.link} key={index} className={` mx-3  `}>
+                                <img src={sm.icon} alt="" className="h-5" />
+                            </a>
+                        );
+                    }
                 })}
             </div>
             <a className="mb-2 block regular" href={`mailto:${contactInfo.email}`}>
