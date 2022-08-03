@@ -31,7 +31,7 @@ class CreatePortfolioTranslationsTable extends Migration
             $table->string('about_project')->nullable();
             $table->string('direction')->nullable();
             $table->string('design')->nullable();
-            // $table->string('video_url')->nullable();
+            $table->string('video_url')->nullable();
             $table->string('animation')->nullable();
             $table->string('music')->nullable();
             // $table->string('position')->nullable();

@@ -54,6 +54,7 @@ class Portfolio extends Model
         'duration',
         'about_project',
         'directions',
+        'video_url',
         'design',
         'animation',
         'music',

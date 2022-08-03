@@ -198,23 +198,23 @@
                                             </small>
                                             @enderror
 
+                                            <div class="form-group">
+                                                <label class="form-label">@lang('admin.video_url')</label>
+                                                <input type="text" name={{$locale.'[video_url]'}} class="form-control" placeholder="@lang('admin.video_url')" value="{{$portfolio->video_url ?? ''}}">
 
+                                            </div>
+                                            @error($locale.'.video_url')
+                                            <small class="text-danger">
+                                                <div class="error">
+                                                    {{$message}}
+                                                </div>
+                                            </small>
+                                            @enderror
 
                                         </div>
 
                                     @endforeach
-                                    <div class="form-group">
-                                        <label class="form-label">@lang('admin.video_url')</label>
-                                        <input type="text" name={{'video_url'}} class="form-control" placeholder="@lang('admin.video_url')" value="{{$portfolio->video_url ?? ''}}">
 
-                                    </div>
-                                    @error($locale.'.video_url')
-                                    <small class="text-danger">
-                                        <div class="error">
-                                            {{$message}}
-                                        </div>
-                                    </small>
-                                    @enderror
 
                                 </div>
                             </div>

@@ -15,6 +15,7 @@ class PortfolioTranslation extends BaseTranslationModel
     // ];
     protected $fillable = [
         'name',
+        'video_url',
         'costumer',
         'durations',
         'about_project',
