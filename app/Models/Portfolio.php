@@ -53,7 +53,7 @@ class Portfolio extends Model
         'costumer',
         'duration',
         'about_project',
-        'direction',
+        'directions',
         'design',
         'animation',
         'music',

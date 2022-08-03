@@ -1938,6 +1938,10 @@ img {
     width: 50%;
   }
 
+  .lg\:w-2\/4 {
+    width: 50%;
+  }
+
   .lg\:max-w-3xl {
     max-width: 48rem;
   }
