@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link, usePage } from '@inertiajs/inertia-react'
+import React from "react";
+import { Link, usePage } from "@inertiajs/inertia-react";
 // import HeroBg from "../assets/images/bg/1.png";
 import { FiArrowRight } from "react-icons/fi";
 import { useRef, useState } from "react";
@@ -20,7 +20,15 @@ import Layout from "../Layouts/Layout";
 // import img9 from "../assets/images/projects/3.png";
 import TextSlide from "../components/TextSlide";
 
-const Projects = ({ seo, category, active, indexx, portfolio, searched, images }) => {
+const Projects = ({
+    seo,
+    category,
+    active,
+    indexx,
+    portfolio,
+    searched,
+    images,
+}) => {
     // console.log(searched, 'esaa');
 
     const filterProject = () => {
@@ -29,8 +37,7 @@ const Projects = ({ seo, category, active, indexx, portfolio, searched, images }
         } else {
             return portfolio.data;
         }
-    }
-
+    };
 
     const renderHTML = (rawHTML) =>
         React.createElement("div", {
@@ -48,7 +55,11 @@ const Projects = ({ seo, category, active, indexx, portfolio, searched, images }
                     rows.push(
                         <Link
                             href={item.url}
-                            className={item.active ? "text-custom-pink-500 mx-3 p-2 text-3xl" : " mx-5 text-3xl"}
+                            className={
+                                item.active
+                                    ? "text-custom-pink-500 mx-3 p-2 text-3xl"
+                                    : " mx-5 text-3xl"
+                            }
                         >
                             {item.label}
                         </Link>
@@ -69,10 +80,11 @@ const Projects = ({ seo, category, active, indexx, portfolio, searched, images }
         return rowCount > 1 ? (
             <Link href={links[0].url}>
                 {/* <Arrow color="#2F3E51" rotate="90" /> */}
-                <button className="arrow" style={{ transform: "rotate(-90deg)" }}>
-                </button>
+                <button
+                    className="arrow"
+                    style={{ transform: "rotate(-90deg)" }}
+                ></button>
                 {/* <Arrow color="#2F3E51" rotate="90" /> */}
-
             </Link>
         ) : null;
     };
@@ -87,12 +99,13 @@ const Projects = ({ seo, category, active, indexx, portfolio, searched, images }
             <Link href={links[links.length - 1].url}>
                 {/* <Arrow color="#2F3E51" rotate="-90" /> */}
                 {/* <Arrow color="#2F3E51" rotate="-90" /> */}
-                <button className="arrow" style={{ transform: "rotate(90deg)" }}>
-                </button>
+                <button
+                    className="arrow"
+                    style={{ transform: "rotate(90deg)" }}
+                ></button>
             </Link>
         ) : null;
     };
-
 
     let projectLinks = [
         {
@@ -102,16 +115,13 @@ const Projects = ({ seo, category, active, indexx, portfolio, searched, images }
     ];
 
     category.map((e) => {
-        projectLinks.push(
-            {
-                link: '',
-                name: e.name,
-            }
-        )
-    })
+        projectLinks.push({
+            link: "",
+            name: e.name,
+        });
+    });
 
     const [activeLink, setActiveLink] = useState(indexx ? indexx : 0);
-
 
     const [transform, setTransform] = useState("translate3d(0, 0, 0)");
     const [transformReverse, setTransformReverse] = useState(
@@ -134,14 +144,20 @@ const Projects = ({ seo, category, active, indexx, portfolio, searched, images }
     return (
         <Layout seo={seo}>
             <>
-
                 <section className="wrapper  pt-40 text-center min-h-screen">
                     {projectLinks.map((item, i) => {
                         return (
                             <Link
                                 data-aos="fade-up"
                                 key={i}
-                                href={i != 0 ? route("client.projects.show", [item.name, i]) : route("client.project.index")}
+                                href={
+                                    i != 0
+                                        ? route("client.projects.show", [
+                                              item.name,
+                                              i,
+                                          ])
+                                        : route("client.project.index")
+                                }
                                 className="fillup mb-2  text-zinc-500 xl:text-6xl lg:text-5xl md:text-4xl text-2xl block w-fit mx-auto uppercase transition "
                                 style={{
                                     color: activeLink == i ? "#E9776D" : "",
@@ -162,103 +178,114 @@ const Projects = ({ seo, category, active, indexx, portfolio, searched, images }
                         data-aos="fade-up"
                         className="text-center max-w-3xl mx-auto mt-20 regular"
                     >
-                        We see every project as a chance to “leave our footprint” and explore
-                        unique motion design techniques. We works with agencies and direct
-                        clients: furthermore our experienced team can manage any stage of
-                        production. We see every project as a chance to “leave our footprint”
-                        and explore unique motion design techniques.
+                        We see every project as a chance to “leave our
+                        footprint” and explore unique motion design techniques.
+                        We works with agencies and direct clients: furthermore
+                        our experienced team can manage any stage of production.
+                        We see every project as a chance to “leave our
+                        footprint” and explore unique motion design techniques.
                     </p>
                 </section>
 
-                <div className="parallax py-20  relative">
-                    <div className="absolute left-0  w-full -z-10" style={{ top: "20%" }}>
+                <div className="parallax py-20  relative text-center">
+                    <div
+                        className="absolute left-0  w-full -z-10"
+                        style={{ top: "20%" }}
+                    >
                         <TextSlide />
                     </div>
 
+                    {filterProject().map((e, i) => {
+                        let bigimg = [0, 3, 6];
+                        if (bigimg.some((e) => e == i)) {
+                            // console.log(e.files[0], 'esaa');
+                            const img =
+                                e.files[0] != null
+                                    ? "/" +
+                                      e.files[0].path +
+                                      "/" +
+                                      e.files[0].title
+                                    : null;
 
-                    {
-                        filterProject().map((e, i) => {
-                            let bigimg = [0, 3, 6];
-                            if (bigimg.some(e => e == i)) {
-                                // console.log(e.files[0], 'esaa');
-                                const img =
-                                    e.files[0] != null
-                                        ? "/" +
-                                        e.files[0].path +
-                                        "/" +
-                                        e.files[0].title
-                                        : null
-
-
-                                return (
-                                    <div className="projectWrapper" key={i}>
-                                        <Link href={route("client.showsingleproject.show", e.id)}>
-                                            <div className="opacity-50 text-lg mb-2">{e.name}</div>
-                                            <div
-                                                data-aos="zoom-in-up"
-                                                className="w-full overflow-hidden relative perspectiveImageContainer"
-                                                style={{ height: "728px" }}
-                                            >
-                                                <div
-                                                    className=" perspectiveImage bg-no-repeat bg-cover bg-right "
-                                                    // ref={bgImage}
-                                                    // onMouseMove={perspectiveFunction}
-                                                    style={{
-                                                        transform: transform,
-                                                        backgroundImage: `url(${img})`,
-                                                    }}
-                                                ></div>
-                                            </div>
-                                        </Link>
-                                    </div>
-                                )
-                            } else {
-                                const img =
-                                    e.files[0] != null
-                                        ? "/" +
-                                        e.files[0].path +
-                                        "/" +
-                                        e.files[0].title
-                                        : null
-
-                                console.log(img, 'esaa');
-                                return (
-                                    <div className="projectWrapper flex flex-col lg:flex-row  justify-between items-start lg:my-20" key={i}>
-                                        <div className="lg:w-2/4 w-full lg:mr-10">
-                                            <Link className="lg:w-2/4 w-full lg:mr-10 " href={route("client.showsingleproject.show", e.id)}>
-                                                <div className="opacity-50 text-lg mb-2">{e.name}</div>
-                                                <div
-                                                    data-aos="zoom-in"
-                                                    className="w-full overflow-hidden relative perspectiveImageContainer"
-                                                    style={{ height: "411px" }}
-                                                >
-                                                    <div
-                                                        className=" perspectiveImage reverse bg-no-repeat bg-cover bg-right "
-                                                        // ref={bgImage}
-                                                        // onMouseMove={perspectiveFunction}
-                                                        style={{
-                                                            transform: transformReverse,
-                                                            // backgroundImage: `url(${img})`,
-                                                            backgroundImage: `url(${img})`,
-                                                        }}
-                                                    ></div>
-                                                </div>
-                                            </Link>
+                            return (
+                                <div className="projectWrapper" key={i}>
+                                    <Link
+                                        href={route(
+                                            "client.showsingleproject.show",
+                                            e.id
+                                        )}
+                                    >
+                                        <div className="opacity-50 text-lg mb-2 text-left">
+                                            {e.name}
                                         </div>
-                                    </div>
-                                )
-                            }
+                                        <div
+                                            data-aos="zoom-in-up"
+                                            className="w-full overflow-hidden relative perspectiveImageContainer"
+                                            style={{ height: "728px" }}
+                                        >
+                                            <div
+                                                className=" perspectiveImage bg-no-repeat bg-cover bg-right "
+                                                ref={bgImage}
+                                                onMouseMove={
+                                                    perspectiveFunction
+                                                }
+                                                style={{
+                                                    transform: transform,
+                                                    backgroundImage: `url(${img})`,
+                                                }}
+                                            ></div>
+                                        </div>
+                                    </Link>
+                                </div>
+                            );
+                        } else {
+                            const img =
+                                e.files[0] != null
+                                    ? "/" +
+                                      e.files[0].path +
+                                      "/" +
+                                      e.files[0].title
+                                    : null;
 
-                        })
-                    }
-
-
-
-
-
+                            console.log(img, "esaa");
+                            return (
+                                <div
+                                    key={i}
+                                    className="lg:w-1/2 projectWrapper w-full inline-block max-w-xl lg:mx-5 lg:my-10"
+                                >
+                                    <Link
+                                        className="w-full"
+                                        href={route(
+                                            "client.showsingleproject.show",
+                                            e.id
+                                        )}
+                                    >
+                                        <div className="opacity-50 text-lg mb-2 text-left">
+                                            {e.name}
+                                        </div>
+                                        <div
+                                            data-aos="zoom-in"
+                                            className="w-full overflow-hidden relative perspectiveImageContainer"
+                                            style={{ height: "411px" }}
+                                        >
+                                            <div
+                                                className=" perspectiveImage reverse bg-no-repeat bg-cover bg-right "
+                                                ref={bgImage}
+                                                onMouseMove={
+                                                    perspectiveFunction
+                                                }
+                                                style={{
+                                                    transform: transformReverse,
+                                                    backgroundImage: `url(${img})`,
+                                                }}
+                                            ></div>
+                                        </div>
+                                    </Link>
+                                </div>
+                            );
+                        }
+                    })}
                 </div>
-
-
 
                 {/* <div className="wrapper flex items-center justify-center pb-20">
                     <button className="text-custom-pink-500 mx-3 p-2 text-3xl">1</button>
@@ -271,7 +298,7 @@ const Projects = ({ seo, category, active, indexx, portfolio, searched, images }
                     {linksNext(portfolio.links)}
                 </div>
             </>
-        </Layout >
+        </Layout>
     );
 };
 
