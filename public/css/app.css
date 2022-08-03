@@ -987,6 +987,9 @@ video {
 .max-w-2xl {
   max-width: 42rem;
 }
+.max-w-xl {
+  max-width: 36rem;
+}
 .max-w-3xl {
   max-width: 48rem;
 }
@@ -995,9 +998,6 @@ video {
 }
 .max-w-sm {
   max-width: 24rem;
-}
-.max-w-xl {
-  max-width: 36rem;
 }
 .shrink {
   flex-shrink: 1;
@@ -1903,11 +1903,6 @@ img {
     left: 0px;
   }
 
-  .lg\:my-20 {
-    margin-top: 5rem;
-    margin-bottom: 5rem;
-  }
-
   .lg\:mx-5 {
     margin-left: 1.25rem;
     margin-right: 1.25rem;
@@ -1926,10 +1921,6 @@ img {
     margin-bottom: 1.25rem;
   }
 
-  .lg\:mr-10 {
-    margin-right: 2.5rem;
-  }
-
   .lg\:h-full {
     height: 100%;
   }
@@ -1938,15 +1929,7 @@ img {
     width: auto;
   }
 
-  .lg\:w-2\/3 {
-    width: 66.666667%;
-  }
-
   .lg\:w-1\/2 {
-    width: 50%;
-  }
-
-  .lg\:w-2\/4 {
     width: 50%;
   }
 

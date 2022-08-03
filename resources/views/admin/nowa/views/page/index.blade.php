@@ -51,7 +51,6 @@
                                                class="validate {{$errors->has('title') ? '' : 'valid'}}">
                                     </th>
 
-
                                 @if($data)
                                     @foreach($data as $item)
 

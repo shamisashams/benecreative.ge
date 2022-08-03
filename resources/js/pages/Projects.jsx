@@ -33,7 +33,7 @@ const Projects = ({
 
     const filterProject = () => {
         if (active) {
-            return searched;
+            return searched.data;
         } else {
             return portfolio.data;
         }
@@ -247,7 +247,7 @@ const Projects = ({
                                     e.files[0].title
                                     : null;
 
-                            console.log(img, "esaa");
+                            // console.log(img, "esaa");
                             return (
                                 <div
                                     key={i}

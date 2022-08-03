@@ -154,7 +154,7 @@ Route::prefix('{locale?}')
             //portfolio
             Route::get('/projects', [\App\Http\Controllers\PortfolioController::class, 'index'])->name('client.project.index');
             Route::get('/projectssearch{search}/{item}', [\App\Http\Controllers\PortfolioController::class, 'search'])->name('client.project.show');
-            Route::get('/projectssearch/{search}/{item?}', [\App\Http\Controllers\PortfolioController::class, 'searchProject'])->name('client.projects.show');
+            Route::get('/project/ssearch/{search}/{item?}', [\App\Http\Controllers\PortfolioController::class, 'searchProject'])->name('client.projects.show');
 
             Route::get('project/projectsdetails/{projectsdetails?}', [\App\Http\Controllers\PortfolioController::class, 'singleproject'])->name('client.showsingleproject.show');
 
