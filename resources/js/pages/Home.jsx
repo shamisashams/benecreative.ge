@@ -37,7 +37,7 @@ const Home = ({
 
     const filterProject = () => {
         if (active) {
-            return searched;
+            return searched.data;
         } else {
             return portfolio.data;
         }
@@ -318,11 +318,22 @@ const Home = ({
                     <button className=" mx-5 text-3xl">3</button>
                 </div> */}
 
-                <div className="wrapper flex items-center justify-center pt-20">
-                    {linksPrev(portfolio.links)}
-                    <button className="">{links(portfolio.links)}</button>
-                    {linksNext(portfolio.links)}
-                </div>
+
+                {
+                    searched ?
+                        <div className="wrapper flex items-center justify-center pt-20">
+                            {linksPrev(searched.links)}
+                            <button className="">{links(searched.links)}</button>
+                            {linksNext(searched.links)}
+                        </div>
+                        : <div className="wrapper flex items-center justify-center pt-20">
+                            {linksPrev(portfolio.links)}
+                            <button className="">{links(portfolio.links)}</button>
+                            {linksNext(portfolio.links)}
+                        </div>
+                }
+
+
             </>
         </Layout>
     );

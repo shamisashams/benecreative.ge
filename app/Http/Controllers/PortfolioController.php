@@ -89,7 +89,7 @@ class PortfolioController extends Controller
         // dd($categoryid->id);
         $searchedProducts = [];
         if ($categoryid != null) {
-            $searchedProducts = Portfolio::with(['files', 'latestImage', 'translation'])->where('category_id', $categoryid->id)->get();
+            $searchedProducts = Portfolio::with(['files', 'latestImage', 'translation'])->where('category_id', $categoryid->id)->paginate(6);
         }
         // dd($searchedProducts);
         $portfolio = Portfolio::where("status", 0)->with(['files', 'translations', 'latestImage'])->paginate(6);
