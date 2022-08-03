@@ -43,16 +43,16 @@ export const contactInfo = {
 
 // partners
 export const partners = [
-    '/assets/images/partners/1.png',
-    '/assets/images/partners/2.png',
-    '/assets/images/partners/3.png',
-    '/assets/images/partners/4.png',
-    '/assets/images/partners/5.png',
-    '/assets/images/partners/6.png',
-    '/assets/images/partners/7.png',
-    '/assets/images/partners/8.png',
-    '/assets/images/partners/1.png',
-    '/assets/images/partners/2.png',
+    "/assets/images/partners/1.png",
+    "/assets/images/partners/2.png",
+    "/assets/images/partners/3.png",
+    "/assets/images/partners/4.png",
+    "/assets/images/partners/5.png",
+    "/assets/images/partners/6.png",
+    "/assets/images/partners/7.png",
+    "/assets/images/partners/8.png",
+    "/assets/images/partners/1.png",
+    "/assets/images/partners/2.png",
 ];
 
 // navbar
@@ -105,23 +105,23 @@ export const navigations = [
 // social media
 export const socialMedia = [
     {
-        icon: '/assets/images/sm/fb.svg',
+        icon: "/assets/images/sm/fb.svg",
         link: "#",
     },
     {
-        icon: '/assets/images/sm/tw.svg',
+        icon: "/assets/images/sm/tw.svg",
         link: "#",
     },
     {
-        icon: '/assets/images/sm/ig.svg',
+        icon: "/assets/images/sm/ig.svg",
         link: "#",
     },
     {
-        icon: '/assets/images/sm/dr.svg',
+        icon: "/assets/images/sm/dr.svg",
         link: "#",
     },
     {
-        icon: '/assets/images/sm/be.svg',
+        icon: "/assets/images/sm/be.svg",
         link: "#",
     },
 ];
@@ -156,47 +156,47 @@ export const projectLinks = [
 
 export const team = [
     {
-        img: '/assets/images/team/1.png',
+        img: "/assets/images/team/1.png",
         name: "Name Surname",
         position: "Position",
     },
     {
-        img: '/assets/images/team/2.png',
+        img: "/assets/images/team/2.png",
         name: "Name Surname",
         position: "Position",
     },
     {
-        img: '/assets/images/team/3.png',
+        img: "/assets/images/team/3.png",
         name: "Name Surname",
         position: "Position",
     },
     {
-        img: '/assets/images/team/4.png',
+        img: "/assets/images/team/4.png",
         name: "Name Surname",
         position: "Position",
     },
     {
-        img: '/assets/images/team/5.png',
+        img: "/assets/images/team/5.png",
         name: "Name Surname",
         position: "Position",
     },
     {
-        img: '/assets/images/team/6.png',
+        img: "/assets/images/team/6.png",
         name: "Name Surname",
         position: "Position",
     },
     {
-        img: '/assets/images/team/7.png',
+        img: "/assets/images/team/7.png",
         name: "Name Surname",
         position: "Position",
     },
     {
-        img: '/assets/images/team/8.png',
+        img: "/assets/images/team/8.png",
         name: "Name Surname",
         position: "Position",
     },
     {
-        img: '/assets/images/team/9.png',
+        img: "/assets/images/team/9.png",
         name: "Name Surname",
         position: "Position",
     },
@@ -204,32 +204,32 @@ export const team = [
 
 export const otherProjects = [
     {
-        img: '/assets/images/projects/1.png',
+        img: "/assets/images/projects/1.png",
         name: "project name",
         link: "/portfolio",
     },
     {
-        img: '/assets/images/projects/2.png',
+        img: "/assets/images/projects/2.png",
         name: "project name",
         link: "/portfolio",
     },
     {
-        img: '/assets/images/projects/3.png',
+        img: "/assets/images/projects/3.png",
         name: "project name",
         link: "/portfolio",
     },
     {
-        img: '/assets/images/projects/4.png',
+        img: "/assets/images/projects/4.png",
         name: "project name",
         link: "/portfolio",
     },
     {
-        img: '/assets/images/projects/5.png',
+        img: "/assets/images/projects/5.png",
         name: "project name",
         link: "/portfolio",
     },
     {
-        img: '/assets/images/projects/6.png',
+        img: "/assets/images/projects/6.png",
         name: "project name",
         link: "/portfolio",
     },
@@ -241,27 +241,27 @@ export const news = [
         title: "News name",
         date: "15.07.2022",
         text: "We see every project as a chance to “leave our footprint” and chance to “leave our footprint” and  explore unique motion design techniques. We works with agencies and direct clients: furthermore our experienced team can ",
-        img: '/assets/images/projects/2.png',
+        img: "/assets/images/projects/2.png",
     },
     {
         link: "/single-news",
         title: "News name",
         date: "15.07.2022",
         text: "We see every project as aexplore unique motion design techniques. We works with agencies and direct clients: furthermore our experienced team can ",
-        img: '/assets/images/projects/3.png',
+        img: "/assets/images/projects/3.png",
     },
     {
         link: "/single-news",
         title: "News name",
         date: "15.07.2022",
         text: "We see evernce to “leave our footprint” and explore unique motion design techniques. We works with agencies and direct clients: furthermore our experienced team can ",
-        img: '/assets/images/projects/4.png',
+        img: "/assets/images/projects/4.png",
     },
     {
         link: "/single-news",
         title: "News name",
         date: "15.07.2022",
         text: "We see every project as a chance to “ley project as a chaave our footprint” and explore unique motion design techniques. We works with agencies and direct clients: furthermore our experienced team can ",
-        img: '/assets/images/projects/5.png',
+        img: "/assets/images/projects/5.png",
     },
 ];
