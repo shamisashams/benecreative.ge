@@ -197,7 +197,10 @@ const SingleProject = ({ seo, portfolio, category_name, sameproduct }) => {
                     <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-16 mb-20">
                         {sameproduct.map((item, index) => {
                             return (
-                                <Link to={item.link} key={index}>
+                                <Link href={route(
+                                    "client.showsingleproject.show",
+                                    item.id
+                                )} key={index}>
                                     <div className="w-full h-60 mb-5 overflow-hidden">
                                         <img
                                             src={item.files[0] != null

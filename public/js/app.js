@@ -4522,7 +4522,7 @@ var SingleProject = function SingleProject(_ref) {
     className: "grid lg:grid-cols-3 md:grid-cols-2 gap-16 mb-20"
   }, sameproduct.map(function (item, index) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
-      to: item.link,
+      href: route("client.showsingleproject.show", item.id),
       key: index
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       className: "w-full h-60 mb-5 overflow-hidden"
