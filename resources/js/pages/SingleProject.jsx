@@ -85,6 +85,8 @@ const SingleProject = ({ seo, portfolio, category_name, sameproduct }) => {
                         </div>
                     </div>
                 </section>
+
+
                 <section
                     ref={video}
                     className="w-screen h-screen relative  group transition-all duration-1000"
@@ -105,6 +107,9 @@ const SingleProject = ({ seo, portfolio, category_name, sameproduct }) => {
 
 
                 </section>
+
+
+
                 <section className="py-20 text-center">
                     <div data-aos="fade-up" className="uppercase text-4xl mb-10">
                         Credits
@@ -150,7 +155,6 @@ const SingleProject = ({ seo, portfolio, category_name, sameproduct }) => {
 
 
                     {portfolio[0].files.map((e, i) => {
-                        console.log(e);
                         const img =
                             e != null
                                 ? "/" +
@@ -158,17 +162,36 @@ const SingleProject = ({ seo, portfolio, category_name, sameproduct }) => {
                                 "/" +
                                 e.title
                                 : null
-                        return (
-                            // <h2>asdsad</h2>
-                            <div className="inline-block w-full h-auto mb-10" key={i}>
-                                <img
-                                    data-aos="zoom-in"
-                                    className="w-full h-full object-cover"
-                                    src={img}
-                                    alt="err"
-                                />
-                            </div>
-                        )
+
+                        let bigimg = [0, 3, 6];
+                        if (bigimg.some((e) => e == i)) {
+                            return (
+                                // <h2>asdsad</h2>
+                                <div className="inline-block w-full h-auto mb-10" key={i}>
+                                    <img
+                                        data-aos="zoom-in"
+                                        className="w-full h-full object-cover"
+                                        src={img}
+                                        alt="err"
+                                    />
+                                </div>
+                            )
+                        } else {
+                            return (
+                                <div
+                                    //  className="inline-block w-full h-auto mb-10" key={i}
+                                    className="lg:w-1/2 projectWrapper w-full inline-block max-w-xl lg:mx-5 lg:my-10"
+                                >
+                                    <img
+                                        data-aos="zoom-in"
+                                        className="w-full h-full object-cover"
+                                        src={img}
+                                        alt="err"
+                                    />
+                                </div>
+                            )
+                        }
+
                     })}
 
                     {/* <div className="inline-block w-full h-auto mb-10">
@@ -196,6 +219,7 @@ const SingleProject = ({ seo, portfolio, category_name, sameproduct }) => {
                     </div>
                     <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-16 mb-20">
                         {sameproduct.map((item, index) => {
+
                             return (
                                 <Link href={route(
                                     "client.showsingleproject.show",
@@ -210,7 +234,7 @@ const SingleProject = ({ seo, portfolio, category_name, sameproduct }) => {
                                                 item.files[0].title
                                                 : null}
                                             alt=""
-                                            className="w-full h-full object-cover transition-all duration-700 hover:scale-125"
+                                            className=" w-full h-full object-cover transition-all duration-700 hover:scale-125"
                                         />
                                     </div>
                                     <div className="uppercase text-center text-xl regular">

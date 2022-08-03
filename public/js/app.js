@@ -4499,21 +4499,36 @@ var SingleProject = function SingleProject(_ref) {
   }, portfolio[0].music)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "parallax projectWrapper text-center"
   }, portfolio[0].files.map(function (e, i) {
-    console.log(e);
     var img = e != null ? "/" + e.path + "/" + e.title : null;
-    return (
-      /*#__PURE__*/
-      // <h2>asdsad</h2>
-      react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-        className: "inline-block w-full h-auto mb-10",
-        key: i
+    var bigimg = [0, 3, 6];
+
+    if (bigimg.some(function (e) {
+      return e == i;
+    })) {
+      return (
+        /*#__PURE__*/
+        // <h2>asdsad</h2>
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          className: "inline-block w-full h-auto mb-10",
+          key: i
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+          "data-aos": "zoom-in",
+          className: "w-full h-full object-cover",
+          src: img,
+          alt: "err"
+        }))
+      );
+    } else {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        //  className="inline-block w-full h-auto mb-10" key={i}
+        className: "lg:w-1/2 projectWrapper w-full inline-block max-w-xl lg:mx-5 lg:my-10"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
         "data-aos": "zoom-in",
         className: "w-full h-full object-cover",
         src: img,
         alt: "err"
-      }))
-    );
+      }));
+    }
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", {
     className: "projectWrapper py-20"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -4529,7 +4544,7 @@ var SingleProject = function SingleProject(_ref) {
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
       src: item.files[0] != null ? "/" + item.files[0].path + "/" + item.files[0].title : null,
       alt: "",
-      className: "w-full h-full object-cover transition-all duration-700 hover:scale-125"
+      className: " w-full h-full object-cover transition-all duration-700 hover:scale-125"
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       className: "uppercase text-center text-xl regular"
     }, item.name));
