@@ -27,9 +27,9 @@ class CreatePortfolioTranslationsTable extends Migration
 
             $table->string('name')->nullable();
             $table->string('costumer')->nullable();
-            $table->string('durations')->nullable();
+            $table->string('duration')->nullable();
             $table->string('about_project')->nullable();
-            $table->string('direction')->nullable();
+            $table->string('directions')->nullable();
             $table->string('design')->nullable();
             $table->string('video_url')->nullable();
             $table->string('animation')->nullable();

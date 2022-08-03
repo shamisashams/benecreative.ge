@@ -17,11 +17,11 @@ class CreatePortfolioTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('costumer');
-            $table->string('durations');
+            $table->string('duration');
             $table->string('category_id');
             $table->string('about_project');
             $table->string('video_url');
-            $table->string('direction');
+            $table->string('directions');
             $table->string('design');
             $table->string('animation');
             $table->string('music');

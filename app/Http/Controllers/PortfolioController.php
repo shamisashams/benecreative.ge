@@ -182,10 +182,8 @@ class PortfolioController extends Controller
     public function singleproject(Request $request, $locale, $slug)
     {
         $page = Page::where('key', 'home')->firstOrFail();
-        $portfolio = Portfolio::where([
-            ["status", 0],
-            ["id", $slug]
-        ])->with(['files', 'translations', 'latestImage'])->get();
+        $portfolio = Portfolio::where("id", $slug)->with(['files', 'translations', 'latestImage'])->get();
+        // dd($portfolio);
 
         $categorysearch = Category::with('translations')->get();
         $categoryid = $categorysearch->where('id', $portfolio[0]->category_id)->first();

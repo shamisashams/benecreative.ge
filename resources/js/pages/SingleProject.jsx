@@ -34,7 +34,7 @@ const SingleProject = ({ seo, portfolio, category_name, sameproduct }) => {
         console.log(scrolled);
         setTransform(`translateY(-${scrolled})`);
     });
-    console.log(scrolled);
+    // console.log(scrolled);
 
     return (
         <Layout seo={seo}>
@@ -57,7 +57,7 @@ const SingleProject = ({ seo, portfolio, category_name, sameproduct }) => {
                                 <div className="mr-32 regular text-custom-pink-500 uppercase">
                                     Duration
                                 </div>
-                                <div className="regular opacity-50 max-w-sm mb-5">{portfolio[0].durations} </div>
+                                <div className="regular opacity-50 max-w-sm mb-5">{portfolio[0].duration} </div>
                             </div>
                             <div>
                                 <div className="mr-32 regular text-custom-pink-500 uppercase">
@@ -121,7 +121,7 @@ const SingleProject = ({ seo, portfolio, category_name, sameproduct }) => {
                         direction
                     </div>
                     <div data-aos="fade-up" className="opacity-50 text-xl regular mb-5">
-                        {portfolio[0].direction}
+                        {portfolio[0].directions}
                     </div>
                     <div
                         data-aos="fade-up"

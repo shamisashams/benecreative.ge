@@ -101,10 +101,10 @@
 
                                             <div class="form-group">
                                                 <label class="form-label">@lang('admin.duration')</label>
-                                                <input type="text" name="{{$locale.'[durations]'}}" class="form-control" placeholder="@lang('admin.durations')" value="{{$portfolio->translate($locale)->durations ?? ''}}">
+                                                <input type="text" name="{{$locale.'[duration]'}}" class="form-control" placeholder="@lang('admin.duration')" value="{{$portfolio->translate($locale)->duration ?? ''}}">
 
                                             </div>
-                                            @error($locale.'.durations')
+                                            @error($locale.'.duration')
                                             <small class="text-danger">
                                                 <div class="error">
                                                     {{$message}}
@@ -149,11 +149,11 @@
                                             @enderror
 
                                             <div class="form-group">
-                                                <label class="form-label">@lang('admin.direction')</label>
-                                                <input type="text" name="{{$locale.'[direction]'}}" class="form-control" placeholder="@lang('admin.direction')" value="{{$portfolio->translate($locale)->direction ?? ''}}">
+                                                <label class="form-label">@lang('admin.directions')</label>
+                                                <input type="text" name="{{$locale.'[directions]'}}" class="form-control" placeholder="@lang('admin.directions')" value="{{$portfolio->translate($locale)->directions ?? ''}}">
 
                                             </div>
-                                            @error($locale.'.direction')
+                                            @error($locale.'.directions')
                                             <small class="text-danger">
                                                 <div class="error">
                                                     {{$message}}

@@ -4435,8 +4435,8 @@ var SingleProject = function SingleProject(_ref) {
     setScrolled(window.scrollY);
     console.log(scrolled);
     setTransform("translateY(-".concat(scrolled, ")"));
-  });
-  console.log(scrolled);
+  }); // console.log(scrolled);
+
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Layouts_Layout__WEBPACK_IMPORTED_MODULE_4__["default"], {
     seo: seo
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -4456,7 +4456,7 @@ var SingleProject = function SingleProject(_ref) {
     className: "mr-32 regular text-custom-pink-500 uppercase"
   }, "Duration"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "regular opacity-50 max-w-sm mb-5"
-  }, portfolio[0].durations, " ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, portfolio[0].duration, " ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "mr-32 regular text-custom-pink-500 uppercase"
   }, "Category"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "regular opacity-50 max-w-sm mb-5"
@@ -4501,7 +4501,7 @@ var SingleProject = function SingleProject(_ref) {
   }, "direction"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     "data-aos": "fade-up",
     className: "opacity-50 text-xl regular mb-5"
-  }, portfolio[0].direction), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, portfolio[0].directions), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     "data-aos": "fade-up",
     className: "regular text-custom-pink-500 uppercase mb-1 text-2xl"
   }, "design"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
