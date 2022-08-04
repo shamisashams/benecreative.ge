@@ -65,7 +65,7 @@ Route::prefix('{locale?}')
 
                 // Category
                 Route::resource('category', \App\Http\Controllers\Admin\CategoryController::class);
-                Route::get('category/{category}/destroy', [\App\Http\Controllers\Admin\CategoryController::class, 'signleproject'])->name('category.destroy');
+                Route::get('category/{category}/destroy', [\App\Http\Controllers\Admin\CategoryController::class, 'destroy'])->name('category.destroy');
 
                 // brands
                 Route::resource('brand', \App\Http\Controllers\Admin\BrandController::class);
@@ -154,7 +154,7 @@ Route::prefix('{locale?}')
             //portfolio
             Route::get('/projects', [\App\Http\Controllers\PortfolioController::class, 'index'])->name('client.project.index');
             Route::get('/projectssearch{search}/{item}', [\App\Http\Controllers\PortfolioController::class, 'search'])->name('client.project.show');
-            Route::get('/project/ssearch/{search}/{item?}', [\App\Http\Controllers\PortfolioController::class, 'searchProject'])->name('client.projects.show');
+            Route::get('/projects/ssearch/{search}/{item?}', [\App\Http\Controllers\PortfolioController::class, 'searchProject'])->name('client.projects.show');
 
             Route::get('project/projectsdetails/{projectsdetails?}', [\App\Http\Controllers\PortfolioController::class, 'singleproject'])->name('client.showsingleproject.show');
 

@@ -180,6 +180,7 @@ const Home = ({
                 </section>
                 <section className="wrapper py-24 text-center">
                     {projectLinks.map((item, i) => {
+                        // console.log(item);
                         return (
                             <Link
                                 data-aos="fade-up"
@@ -192,6 +193,7 @@ const Home = ({
                                         ])
                                         : route("client.home.index")
                                 }
+                                // href='/'
                                 className="fillup mb-2  text-zinc-500 xl:text-6xl lg:text-5xl md:text-4xl text-2xl block w-fit mx-auto uppercase transition "
                                 style={{
                                     color: activeLink == i ? "#E9776D" : "",

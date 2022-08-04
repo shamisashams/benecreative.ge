@@ -3738,10 +3738,12 @@ var Home = function Home(_ref) {
   })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("section", {
     className: "wrapper py-24 text-center"
   }, projectLinks.map(function (item, i) {
+    // console.log(item);
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__.Link, {
       "data-aos": "fade-up",
       key: i,
-      href: i != 0 ? route("client.project.show", [item.name, i]) : route("client.home.index"),
+      href: i != 0 ? route("client.project.show", [item.name, i]) : route("client.home.index") // href='/'
+      ,
       className: "fillup mb-2  text-zinc-500 xl:text-6xl lg:text-5xl md:text-4xl text-2xl block w-fit mx-auto uppercase transition ",
       style: {
         color: activeLink == i ? "#E9776D" : ""
