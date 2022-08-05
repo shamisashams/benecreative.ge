@@ -3731,7 +3731,7 @@ var Home = function Home(_ref) {
   }, " ", __("client.home_main_title", sharedData)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("h1", {
     className: "lg:text-6xl lg:leading-tight text-4xl mt-4 mb-8  h-fit"
   }, renderHTML(__("client.home_main_text", sharedData).replace(/(?:\r\n|\r|\n)/g, "<br>"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__.Link, {
-    href: "/",
+    href: route("client.aboutus"),
     className: "regular"
   }, "Learn more", " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fi__WEBPACK_IMPORTED_MODULE_5__.FiArrowRight, {
     className: "inline-block h-5 w-5"

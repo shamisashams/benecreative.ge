@@ -172,7 +172,7 @@ const Home = ({
                                 )
                             )}
                         </h1>
-                        <Link href="/" className="regular">
+                        <Link href={route("client.aboutus")} className="regular">
                             Learn more{" "}
                             <FiArrowRight className="inline-block h-5 w-5" />
                         </Link>
