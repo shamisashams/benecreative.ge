@@ -5042,7 +5042,28 @@ var Navbar = function Navbar() {
       locales = _usePage$props.locales,
       currentLocale = _usePage$props.currentLocale,
       locale_urls = _usePage$props.locale_urls,
-      pathname = _usePage$props.pathname; // const { pathname } = usePage().props;
+      pathname = _usePage$props.pathname,
+      gfacebook = _usePage$props.gfacebook,
+      ginstagram = _usePage$props.ginstagram,
+      gtwitter = _usePage$props.gtwitter,
+      gbehance = _usePage$props.gbehance,
+      gdribbble = _usePage$props.gdribbble;
+  var socialMedia = [{
+    icon: "/assets/images/sm/fb.svg",
+    link: gfacebook.value
+  }, {
+    icon: "/assets/images/sm/tw.svg",
+    link: gtwitter.value
+  }, {
+    icon: "/assets/images/sm/ig.svg",
+    link: ginstagram.value
+  }, {
+    icon: "/assets/images/sm/dr.svg",
+    link: gbehance.value
+  }, {
+    icon: "/assets/images/sm/be.svg",
+    link: gdribbble.value
+  }]; // const { pathname } = usePage().props;
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
       _useState2 = _slicedToArray(_useState, 2),
@@ -5092,16 +5113,18 @@ var Navbar = function Navbar() {
     }, nav.text);
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: " flex items-center justify-start md:mt-20 mt-10"
-  }, _Data__WEBPACK_IMPORTED_MODULE_2__.socialMedia.map(function (sm, index) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
-      href: sm.link,
-      key: index,
-      className: "opacity-30 hover:opacity-100 mr-5 transition-all duration-500 "
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-      src: sm.icon,
-      alt: "",
-      className: "h-6"
-    }));
+  }, socialMedia.map(function (sm, index) {
+    if (sm.link) {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
+        href: sm.link,
+        key: index,
+        className: " mx-3  "
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+        src: sm.icon,
+        alt: "",
+        className: "h-5"
+      }));
+    }
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "hidden sm:block images h-full xl:w-2/3 w-1/2 relative transition-all duration-1000 overflow-hidden ".concat(showMenu ? "translate-y-0 " : "translate-y-full")
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {

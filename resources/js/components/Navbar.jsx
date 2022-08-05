@@ -53,8 +53,35 @@ const Navbar = () => {
         locales,
         currentLocale,
         locale_urls,
-        pathname
+        pathname,
+        gfacebook, ginstagram, gtwitter, gbehance, gdribbble
     } = usePage().props;
+
+
+
+    const socialMedia = [
+        {
+            icon: "/assets/images/sm/fb.svg",
+            link: gfacebook.value,
+        },
+        {
+            icon: "/assets/images/sm/tw.svg",
+            link: gtwitter.value,
+        },
+        {
+            icon: "/assets/images/sm/ig.svg",
+            link: ginstagram.value,
+
+        },
+        {
+            icon: "/assets/images/sm/dr.svg",
+            link: gbehance.value,
+        },
+        {
+            icon: "/assets/images/sm/be.svg",
+            link: gdribbble.value,
+        },
+    ];
 
     // const { pathname } = usePage().props;
 
@@ -111,15 +138,13 @@ const Navbar = () => {
                             })}
                             <div className=" flex items-center justify-start md:mt-20 mt-10">
                                 {socialMedia.map((sm, index) => {
-                                    return (
-                                        <a
-                                            href={sm.link}
-                                            key={index}
-                                            className={`opacity-30 hover:opacity-100 mr-5 transition-all duration-500 `}
-                                        >
-                                            <img src={sm.icon} alt="" className="h-6" />
-                                        </a>
-                                    );
+                                    if (sm.link) {
+                                        return (
+                                            <a href={sm.link} key={index} className={` mx-3  `}>
+                                                <img src={sm.icon} alt="" className="h-5" />
+                                            </a>
+                                        );
+                                    }
                                 })}
                             </div>
                         </div>
