@@ -26,7 +26,12 @@ const SingleNews = ({ seo, news }) => {
             <section className="py-32 relative wrapper">
                 <img
                     style={{ width: "60%" }}
-                    src={'/assets/images/projects/3.png'}
+                    src={news.latest_image != null
+                        ? "/" +
+                        news.latest_image.path +
+                        "/" +
+                        news.latest_image.title
+                        : null}
                     alt=""
                     className="fixed left-1/2 -translate-x-1/2 top-40 -z-10 blur-xl  opacity-50"
                 />
