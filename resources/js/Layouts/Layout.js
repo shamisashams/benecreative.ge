@@ -5,6 +5,7 @@ import "aos/dist/aos.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import setSeoData from "./SetSeoData";
+import CursorFollower from "../components/CursorFollower";
 // import {Fragment} from "react";
 // import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Aos from "aos";
@@ -31,6 +32,7 @@ export default function Layout({ children, seo = null }) {
         <>
             {/*<Router>*/}
             {/*<Fragment>*/}
+            <CursorFollower />
             <Navbar />
             {children}
             <Footer />
