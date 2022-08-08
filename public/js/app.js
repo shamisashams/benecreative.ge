@@ -4471,20 +4471,19 @@ var SingleProject = function SingleProject(_ref) {
   var video = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     video.current.style.marginTop = "-250px";
-  }, [video]);
-  window.addEventListener("scroll", function () {
-    if (window.scrollY > 150) {
-      showcase.current.style.transform = "translateY(-100%)";
-      video.current.style.marginTop = "-350px";
-    } else {
-      showcase.current.style.transform = "translateY(0)";
-      video.current.style.marginTop = "-250px";
-    }
-
-    setScrolled(window.scrollY); // console.log(scrolled);
-
-    setTransform("translateY(-".concat(scrolled, ")"));
-  }); // console.log(scrolled);
+  }, [video]); // window.addEventListener("scroll", () => {
+  //     if (window.scrollY > 150) {
+  //         showcase.current.style.transform = `translateY(-100%)`;
+  //         video.current.style.marginTop = `-350px`;
+  //     } else {
+  //         showcase.current.style.transform = `translateY(0)`;
+  //         video.current.style.marginTop = `-250px`;
+  //     }
+  //     setScrolled(window.scrollY);
+  //     // console.log(scrolled);
+  //     setTransform(`translateY(-${scrolled})`);
+  // });
+  // console.log(scrolled);
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Layouts_Layout__WEBPACK_IMPORTED_MODULE_4__["default"], {
     seo: seo
@@ -4568,7 +4567,9 @@ var SingleProject = function SingleProject(_ref) {
   }, "music & sound design"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     "data-aos": "fade-up",
     className: "opacity-50 text-xl regular mb-5"
-  }, portfolio[0].music)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, portfolio[0].music)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_parallax_mouse__WEBPACK_IMPORTED_MODULE_2__.MouseParallaxContainer, {
+    enableCSSTransition: true,
+    useWindowMouseEvents: true,
     className: "parallax projectWrapper text-center"
   }, portfolio[0].files.map(function (e, i) {
     var img = e != null ? "/" + e.path + "/" + e.title : null;
@@ -4580,7 +4581,9 @@ var SingleProject = function SingleProject(_ref) {
       return (
         /*#__PURE__*/
         // <h2>asdsad</h2>
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_parallax_mouse__WEBPACK_IMPORTED_MODULE_2__.MouseParallaxChild, {
+          factorX: Math.random() * (0.1 - 0.01) + 0.01,
+          factorY: Math.random() * (0.1 - 0.01) + 0.01,
           className: "inline-block w-full h-auto mb-10",
           key: i
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
@@ -4591,15 +4594,22 @@ var SingleProject = function SingleProject(_ref) {
         }))
       );
     } else {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-        //  className="inline-block w-full h-auto mb-10" key={i}
-        className: "lg:w-1/2 projectWrapper w-full inline-block max-w-xl lg:mx-5 lg:my-10"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-        "data-aos": "zoom-in",
-        className: "w-full h-full object-cover",
-        src: img,
-        alt: "err"
-      }));
+      return (
+        /*#__PURE__*/
+        // <div className="lg:w-1/2 projectWrapper w-full inline-block max-w-xl lg:mx-5 lg:my-10">
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_parallax_mouse__WEBPACK_IMPORTED_MODULE_2__.MouseParallaxChild, {
+          factorX: Math.random() * (0.1 - 0.01) + 0.01,
+          factorY: Math.random() * (0.1 - 0.01) + 0.01,
+          className: "lg:w-1/2 projectWrapper w-full inline-block max-w-xl lg:mx-5 lg:my-10",
+          key: i
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+          "data-aos": "zoom-in",
+          className: "w-full h-full object-cover",
+          src: img,
+          alt: "err"
+        })) // </div>
+
+      );
     }
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", {
     className: "projectWrapper py-20"

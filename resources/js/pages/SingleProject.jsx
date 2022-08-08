@@ -22,18 +22,18 @@ const SingleProject = ({ seo, portfolio, category_name, sameproduct }) => {
     useEffect(() => {
         video.current.style.marginTop = `-250px`;
     }, [video]);
-    window.addEventListener("scroll", () => {
-        if (window.scrollY > 150) {
-            showcase.current.style.transform = `translateY(-100%)`;
-            video.current.style.marginTop = `-350px`;
-        } else {
-            showcase.current.style.transform = `translateY(0)`;
-            video.current.style.marginTop = `-250px`;
-        }
-        setScrolled(window.scrollY);
-        // console.log(scrolled);
-        setTransform(`translateY(-${scrolled})`);
-    });
+    // window.addEventListener("scroll", () => {
+    //     if (window.scrollY > 150) {
+    //         showcase.current.style.transform = `translateY(-100%)`;
+    //         video.current.style.marginTop = `-350px`;
+    //     } else {
+    //         showcase.current.style.transform = `translateY(0)`;
+    //         video.current.style.marginTop = `-250px`;
+    //     }
+    //     setScrolled(window.scrollY);
+    //     // console.log(scrolled);
+    //     setTransform(`translateY(-${scrolled})`);
+    // });
     // console.log(scrolled);
 
     return (
@@ -151,8 +151,12 @@ const SingleProject = ({ seo, portfolio, category_name, sameproduct }) => {
                         {portfolio[0].music}
                     </div>
                 </section>
-                <div className="parallax projectWrapper text-center">
-
+                {/* <div className="parallax projectWrapper text-center"> */}
+                <MouseParallaxContainer
+                    enableCSSTransition
+                    useWindowMouseEvents
+                    className="parallax projectWrapper text-center"
+                >
 
                     {portfolio[0].files.map((e, i) => {
                         const img =
@@ -167,20 +171,31 @@ const SingleProject = ({ seo, portfolio, category_name, sameproduct }) => {
                         if (bigimg.some((e) => e == i)) {
                             return (
                                 // <h2>asdsad</h2>
-                                <div className="inline-block w-full h-auto mb-10" key={i}>
+                                <MouseParallaxChild
+                                    factorX={Math.random() * (0.1 - 0.01) + 0.01}
+                                    factorY={Math.random() * (0.1 - 0.01) + 0.01}
+                                    className="inline-block w-full h-auto mb-10"
+                                    key={i}
+                                >
+                                    {/* <div className="inline-block w-full h-auto mb-10" key={i}> */}
                                     <img
                                         data-aos="zoom-in"
                                         className="w-full h-full object-cover"
                                         src={img}
                                         alt="err"
                                     />
-                                </div>
+                                    {/* </div> */}
+                                </MouseParallaxChild>
                             )
                         } else {
                             return (
-                                <div
-                                    //  className="inline-block w-full h-auto mb-10" key={i}
+                                // <div className="lg:w-1/2 projectWrapper w-full inline-block max-w-xl lg:mx-5 lg:my-10">
+
+                                <MouseParallaxChild
+                                    factorX={Math.random() * (0.1 - 0.01) + 0.01}
+                                    factorY={Math.random() * (0.1 - 0.01) + 0.01}
                                     className="lg:w-1/2 projectWrapper w-full inline-block max-w-xl lg:mx-5 lg:my-10"
+                                    key={i}
                                 >
                                     <img
                                         data-aos="zoom-in"
@@ -188,7 +203,8 @@ const SingleProject = ({ seo, portfolio, category_name, sameproduct }) => {
                                         src={img}
                                         alt="err"
                                     />
-                                </div>
+                                </MouseParallaxChild>
+                                // </div>
                             )
                         }
 
@@ -212,7 +228,7 @@ const SingleProject = ({ seo, portfolio, category_name, sameproduct }) => {
 
 
 
-                </div>
+                </MouseParallaxContainer>
                 <section className="projectWrapper py-20">
                     <div className="text-center uppercase text-4xl mb-10">
                         other projects
