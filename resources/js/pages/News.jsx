@@ -11,6 +11,8 @@ import { Route } from "react-router-dom";
 
 const News = ({ seo, news }) => {
 
+    console.log(news);
+
     const renderHTML = (rawHTML) => React.createElement("div", { dangerouslySetInnerHTML: { __html: rawHTML } });
     const sharedData = usePage().props.localizations;
 

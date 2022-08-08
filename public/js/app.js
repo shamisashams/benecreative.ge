@@ -3875,6 +3875,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 var News = function News(_ref) {
   var seo = _ref.seo,
       news = _ref.news;
+  console.log(news);
 
   var renderHTML = function renderHTML(rawHTML) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -5162,12 +5163,12 @@ var Navbar = function Navbar() {
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "".concat(indexHovered === 3 ? "visible opacity-100 translate-y-0" : "invisible opacity-0 -translate-y-full", " absolute right-0 top-0 flex items-center justify-center h-full transition duration-700  w-auto ")
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-    src: '/assets/images/navbar/3.png',
+    src: '/assets/images/navbar/8.png',
     alt: ""
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "".concat(indexHovered === 4 ? "visible opacity-100 " : "invisible opacity-0 ", " fixed right-0 top-0 flex items-center justify-center w-screen h-screen transition duration-700 ")
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-    src: '/assets/images/navbar/4.png',
+    src: '/assets/images/navbar/9.png',
     alt: "",
     className: "fixed right-0 bottom-0 w-auto  -z-10 "
   })))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {

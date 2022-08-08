@@ -75,7 +75,7 @@
 
                                             <div class="form-group">
                                                 <label class="form-label">@lang('admin.costumer')</label>
-                                                <input type="text" name="{{$locale.'[costumer]'}}" class="form-control" placeholder="@lang('admin.costumer')" value="{{$portfolio->translate($locale)->costumer ?? ''}}" required>
+                                                <input type="text" name="{{$locale.'[costumer]'}}" class="form-control" placeholder="@lang('admin.costumer')" value="{{$portfolio->translate($locale)->costumer ?? ''}}" >
 
                                             </div>
                                             @error($locale.'.costumer')
@@ -88,7 +88,7 @@
 
                                             <div class="form-group">
                                                 <label class="form-label">@lang('admin.name')</label>
-                                                <input type="text" name="{{$locale.'[name]'}}" class="form-control" placeholder="@lang('admin.name')" value="{{$portfolio->translate($locale)->name ?? ''}}" required>
+                                                <input type="text" name="{{$locale.'[name]'}}" class="form-control" placeholder="@lang('admin.name')" value="{{$portfolio->translate($locale)->name ?? ''}}" >
 
                                             </div>
                                             @error($locale.'.name')
@@ -101,7 +101,7 @@
 
                                             <div class="form-group">
                                                 <label class="form-label">@lang('admin.duration')</label>
-                                                <input type="text" name="{{$locale.'[duration]'}}" class="form-control" placeholder="@lang('admin.duration')" value="{{$portfolio->translate($locale)->duration ?? ''}}" required>
+                                                <input type="text" name="{{$locale.'[duration]'}}" class="form-control" placeholder="@lang('admin.duration')" value="{{$portfolio->translate($locale)->duration ?? ''}}" >
 
                                             </div>
                                             @error($locale.'.duration')
@@ -115,7 +115,7 @@
 
                                             <div class="form-group">
                                                 <label class="form-label">@lang('admin.category')</label>
-                                                <select name="category_id" class="select2 browser-default" required>
+                                                <select name="category_id" class="select2 browser-default">
                                                     <option value="" disabled selected>Choose your option</option>
                                                     @foreach ($category as $cat)
                                                     {{-- <option value={{$cat->id}}>{{$cat->name}}</option>
@@ -137,7 +137,7 @@
 
                                             <div class="form-group">
                                                 <label class="form-label">@lang('admin.about_project')</label>
-                                                <input type="text" name="{{$locale.'[about_project]'}}" class="form-control" placeholder="@lang('admin.about_project')" value="{{$portfolio->translate($locale)->about_project ?? ''}}" required>
+                                                <input type="text" name="{{$locale.'[about_project]'}}" class="form-control" placeholder="@lang('admin.about_project')" value="{{$portfolio->translate($locale)->about_project ?? ''}}" >
 
                                             </div>
                                             @error($locale.'.about_project')
@@ -150,7 +150,7 @@
 
                                             <div class="form-group">
                                                 <label class="form-label">@lang('admin.directions')</label>
-                                                <input type="text" name="{{$locale.'[directions]'}}" class="form-control" placeholder="@lang('admin.directions')" value="{{$portfolio->translate($locale)->directions ?? ''}}" required>
+                                                <input type="text" name="{{$locale.'[directions]'}}" class="form-control" placeholder="@lang('admin.directions')" value="{{$portfolio->translate($locale)->directions ?? ''}}" >
 
                                             </div>
                                             @error($locale.'.directions')
@@ -163,7 +163,7 @@
 
                                             <div class="form-group">
                                                 <label class="form-label">@lang('admin.design')</label>
-                                                <input type="text" name="{{$locale.'[design]'}}" class="form-control" placeholder="@lang('admin.design')" value="{{$portfolio->translate($locale)->design ?? ''}}" required>
+                                                <input type="text" name="{{$locale.'[design]'}}" class="form-control" placeholder="@lang('admin.design')" value="{{$portfolio->translate($locale)->design ?? ''}}" >
 
                                             </div>
                                             @error($locale.'.design')
@@ -176,7 +176,7 @@
 
                                             <div class="form-group">
                                                 <label class="form-label">@lang('admin.animation')</label>
-                                                <input type="text" name="{{$locale.'[animation]'}}" class="form-control" placeholder="@lang('admin.animation')" value="{{$portfolio->translate($locale)->animation ?? ''}}" required>
+                                                <input type="text" name="{{$locale.'[animation]'}}" class="form-control" placeholder="@lang('admin.animation')" value="{{$portfolio->translate($locale)->animation ?? ''}}" >
 
                                             </div>
                                             @error($locale.'.animation')
@@ -188,7 +188,7 @@
                                             @enderror
                                             <div class="form-group">
                                                 <label class="form-label">@lang('admin.music')</label>
-                                                <input type="text" name="{{$locale.'[music]'}}" class="form-control" placeholder="@lang('admin.music')" value="{{$portfolio->translate($locale)->music ?? ''}}" required>
+                                                <input type="text" name="{{$locale.'[music]'}}" class="form-control" placeholder="@lang('admin.music')" value="{{$portfolio->translate($locale)->music ?? ''}}" >
                                             </div>
                                             @error($locale.'.music')
                                             <small class="text-danger">
