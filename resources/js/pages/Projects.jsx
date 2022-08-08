@@ -195,96 +195,120 @@ const Projects = ({
                         <TextSlide />
                     </div>
 
-                    {filterProject().map((e, i) => {
-                        let bigimg = [0, 3, 6];
-                        if (bigimg.some((e) => e == i)) {
-                            // console.log(e.files[0], 'esaa');
-                            const img =
-                                e.files[0] != null
-                                    ? "/" +
-                                    e.files[0].path +
-                                    "/" +
-                                    e.files[0].title
-                                    : null;
+                    <MouseParallaxContainer
+                        enableCSSTransition
+                        useWindowMouseEvents
+                        className="parallax py-20  relative"
+                    >
 
-                            return (
-                                <div className="projectWrapper" key={i}>
-                                    <Link
-                                        href={route(
-                                            "client.showsingleproject.show",
-                                            e.id
-                                        )}
-                                    >
-                                        <div className="opacity-50 text-lg mb-2 text-left">
-                                            {e.name}
-                                        </div>
-                                        <div
-                                            data-aos="zoom-in-up"
-                                            className="w-full overflow-hidden relative perspectiveImageContainer"
-                                            style={{ height: "728px" }}
-                                        >
-                                            <div
-                                                className=" perspectiveImage bg-no-repeat bg-cover bg-right "
-                                                ref={bgImage}
-                                                onMouseMove={
-                                                    perspectiveFunction
-                                                }
-                                                style={{
-                                                    transform: transform,
-                                                    backgroundImage: `url(${img})`,
-                                                }}
-                                            ></div>
-                                        </div>
-                                    </Link>
-                                </div>
-                            );
-                        } else {
-                            const img =
-                                e.files[0] != null
-                                    ? "/" +
-                                    e.files[0].path +
-                                    "/" +
-                                    e.files[0].title
-                                    : null;
+                        {filterProject().map((e, i) => {
+                            let bigimg = [0, 3, 6];
+                            if (bigimg.some((e) => e == i)) {
+                                // console.log(e.files[0], 'esaa');
+                                const img =
+                                    e.files[0] != null
+                                        ? "/" +
+                                        e.files[0].path +
+                                        "/" +
+                                        e.files[0].title
+                                        : null;
 
-                            // console.log(img, "esaa");
-                            return (
-                                <div
-                                    key={i}
-                                    className="lg:w-1/2 projectWrapper w-full inline-block max-w-xl lg:mx-5 lg:my-10"
-                                >
-                                    <Link
-                                        className="w-full"
-                                        href={route(
-                                            "client.showsingleproject.show",
-                                            e.id
-                                        )}
+                                return (
+                                    // <div className="projectWrapper" key={i}>
+                                    <MouseParallaxChild
+                                        className="projectWrapper"
+                                        factorX={Math.random() * (0.1 - 0.01) + 0.01}
+                                        factorY={Math.random() * (0.1 - 0.01) + 0.01}
+                                        key={i}
                                     >
-                                        <div className="opacity-50 text-lg mb-2 text-left">
-                                            {e.name}
-                                        </div>
-                                        <div
-                                            data-aos="zoom-in"
-                                            className="w-full overflow-hidden relative perspectiveImageContainer"
-                                            style={{ height: "411px" }}
+                                        <Link
+                                            href={route(
+                                                "client.showsingleproject.show",
+                                                e.id
+                                            )}
                                         >
+                                            <div className="opacity-50 text-lg mb-2 text-left">
+                                                {e.name}
+                                            </div>
                                             <div
-                                                className=" perspectiveImage reverse bg-no-repeat bg-cover bg-right "
-                                                ref={bgImage}
-                                                onMouseMove={
-                                                    perspectiveFunction
-                                                }
-                                                style={{
-                                                    transform: transformReverse,
-                                                    backgroundImage: `url(${img})`,
-                                                }}
-                                            ></div>
-                                        </div>
-                                    </Link>
-                                </div>
-                            );
-                        }
-                    })}
+                                                data-aos="zoom-in-up"
+                                                className="w-full overflow-hidden relative perspectiveImageContainer"
+                                                style={{ height: "728px" }}
+                                            >
+                                                <div
+                                                    className=" perspectiveImage bg-no-repeat bg-cover bg-right "
+                                                    ref={bgImage}
+                                                    // onMouseMove={
+                                                    //     perspectiveFunction
+                                                    // }
+                                                    style={{
+                                                        transform: transform,
+                                                        backgroundImage: `url(${img})`,
+                                                    }}
+                                                ></div>
+                                            </div>
+                                        </Link>
+                                        {/* </div> */}
+                                    </MouseParallaxChild>
+                                );
+                            } else {
+                                const img =
+                                    e.files[0] != null
+                                        ? "/" +
+                                        e.files[0].path +
+                                        "/" +
+                                        e.files[0].title
+                                        : null;
+
+                                // console.log(img, "esaa");
+                                return (
+                                    // <div
+                                    //     key={i}
+                                    //     className="lg:w-1/2 projectWrapper w-full inline-block max-w-xl lg:mx-5 lg:my-10"
+                                    // >
+                                    <MouseParallaxChild
+                                        className="lg:w-1/2 projectWrapper w-full inline-block max-w-xl lg:mx-5 lg:my-10"
+                                        factorX={Math.random() * (0.1 - 0.01) + 0.01}
+                                        factorY={Math.random() * (0.1 - 0.01) + 0.01}
+                                        key={i}
+                                    >
+                                        <Link
+                                            className="w-full"
+                                            href={route(
+                                                "client.showsingleproject.show",
+                                                e.id
+                                            )}
+                                        >
+                                            <div className="opacity-50 text-lg mb-2 text-left">
+                                                {e.name}
+                                            </div>
+                                            <div
+                                                data-aos="zoom-in"
+                                                className="w-full overflow-hidden relative perspectiveImageContainer"
+                                                style={{ height: "411px" }}
+                                            >
+                                                <div
+                                                    className=" perspectiveImage reverse bg-no-repeat bg-cover bg-right "
+                                                    ref={bgImage}
+                                                    // onMouseMove={
+                                                    //     perspectiveFunction
+                                                    // }
+                                                    style={{
+                                                        transform: transformReverse,
+                                                        backgroundImage: `url(${img})`,
+                                                    }}
+                                                ></div>
+                                            </div>
+                                        </Link>
+                                        {/* </div> */}
+                                    </MouseParallaxChild>
+                                );
+                            }
+                        })}
+
+                    </MouseParallaxContainer>
+
+
                 </div>
 
                 {/* <div className="wrapper flex items-center justify-center pb-20">

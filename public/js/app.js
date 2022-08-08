@@ -4234,7 +4234,11 @@ var Projects = function Projects(_ref) {
     style: {
       top: "20%"
     }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_TextSlide__WEBPACK_IMPORTED_MODULE_4__["default"], null)), filterProject().map(function (e, i) {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_TextSlide__WEBPACK_IMPORTED_MODULE_4__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_parallax_mouse__WEBPACK_IMPORTED_MODULE_2__.MouseParallaxContainer, {
+    enableCSSTransition: true,
+    useWindowMouseEvents: true,
+    className: "parallax py-20  relative"
+  }, filterProject().map(function (e, i) {
     var bigimg = [0, 3, 6];
 
     if (bigimg.some(function (e) {
@@ -4242,57 +4246,76 @@ var Projects = function Projects(_ref) {
     })) {
       // console.log(e.files[0], 'esaa');
       var img = e.files[0] != null ? "/" + e.files[0].path + "/" + e.files[0].title : null;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-        className: "projectWrapper",
-        key: i
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
-        href: route("client.showsingleproject.show", e.id)
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-        className: "opacity-50 text-lg mb-2 text-left"
-      }, e.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-        "data-aos": "zoom-in-up",
-        className: "w-full overflow-hidden relative perspectiveImageContainer",
-        style: {
-          height: "728px"
-        }
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-        className: " perspectiveImage bg-no-repeat bg-cover bg-right ",
-        ref: bgImage,
-        onMouseMove: perspectiveFunction,
-        style: {
-          transform: transform,
-          backgroundImage: "url(".concat(img, ")")
-        }
-      }))));
+      return (
+        /*#__PURE__*/
+        // <div className="projectWrapper" key={i}>
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_parallax_mouse__WEBPACK_IMPORTED_MODULE_2__.MouseParallaxChild, {
+          className: "projectWrapper",
+          factorX: Math.random() * (0.1 - 0.01) + 0.01,
+          factorY: Math.random() * (0.1 - 0.01) + 0.01,
+          key: i
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+          href: route("client.showsingleproject.show", e.id)
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          className: "opacity-50 text-lg mb-2 text-left"
+        }, e.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          "data-aos": "zoom-in-up",
+          className: "w-full overflow-hidden relative perspectiveImageContainer",
+          style: {
+            height: "728px"
+          }
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          className: " perspectiveImage bg-no-repeat bg-cover bg-right ",
+          ref: bgImage // onMouseMove={
+          //     perspectiveFunction
+          // }
+          ,
+          style: {
+            transform: transform,
+            backgroundImage: "url(".concat(img, ")")
+          }
+        }))))
+      );
     } else {
       var _img = e.files[0] != null ? "/" + e.files[0].path + "/" + e.files[0].title : null; // console.log(img, "esaa");
 
 
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-        key: i,
-        className: "lg:w-1/2 projectWrapper w-full inline-block max-w-xl lg:mx-5 lg:my-10"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
-        className: "w-full",
-        href: route("client.showsingleproject.show", e.id)
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-        className: "opacity-50 text-lg mb-2 text-left"
-      }, e.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-        "data-aos": "zoom-in",
-        className: "w-full overflow-hidden relative perspectiveImageContainer",
-        style: {
-          height: "411px"
-        }
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-        className: " perspectiveImage reverse bg-no-repeat bg-cover bg-right ",
-        ref: bgImage,
-        onMouseMove: perspectiveFunction,
-        style: {
-          transform: transformReverse,
-          backgroundImage: "url(".concat(_img, ")")
-        }
-      }))));
+      return (
+        /*#__PURE__*/
+        // <div
+        //     key={i}
+        //     className="lg:w-1/2 projectWrapper w-full inline-block max-w-xl lg:mx-5 lg:my-10"
+        // >
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_parallax_mouse__WEBPACK_IMPORTED_MODULE_2__.MouseParallaxChild, {
+          className: "lg:w-1/2 projectWrapper w-full inline-block max-w-xl lg:mx-5 lg:my-10",
+          factorX: Math.random() * (0.1 - 0.01) + 0.01,
+          factorY: Math.random() * (0.1 - 0.01) + 0.01,
+          key: i
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+          className: "w-full",
+          href: route("client.showsingleproject.show", e.id)
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          className: "opacity-50 text-lg mb-2 text-left"
+        }, e.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          "data-aos": "zoom-in",
+          className: "w-full overflow-hidden relative perspectiveImageContainer",
+          style: {
+            height: "411px"
+          }
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          className: " perspectiveImage reverse bg-no-repeat bg-cover bg-right ",
+          ref: bgImage // onMouseMove={
+          //     perspectiveFunction
+          // }
+          ,
+          style: {
+            transform: transformReverse,
+            backgroundImage: "url(".concat(_img, ")")
+          }
+        }))))
+      );
     }
-  })), searched ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }))), searched ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "wrapper flex items-center justify-center pt-20"
   }, linksPrev(searched.links), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
     className: ""
