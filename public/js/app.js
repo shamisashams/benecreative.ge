@@ -4344,8 +4344,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _Layouts_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Layouts/Layout */ "./resources/js/Layouts/Layout.js");
-/* harmony import */ var react_icons_fi__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-icons/fi */ "./node_modules/react-icons/fi/index.esm.js");
+/* harmony import */ var _components_CursorFollower__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/CursorFollower */ "./resources/js/components/CursorFollower.js");
+/* harmony import */ var react_icons_fi__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-icons/fi */ "./node_modules/react-icons/fi/index.esm.js");
  // import img1 from "../assets/images/projects/3.png";
+
 
 
 
@@ -4369,41 +4371,44 @@ var SingleNews = function SingleNews(_ref) {
     return z;
   };
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("layout", {
-    seo: seo
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", {
-    className: "py-32 relative wrapper"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-    style: {
-      width: "60%"
-    },
-    src: '/assets/images/projects/3.png',
-    alt: "",
-    className: "fixed left-1/2 -translate-x-1/2 top-40 -z-10 blur-xl  opacity-50"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "text-center uppercase mb-5 text-3xl"
-  }, news.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "text-center opacity-50 regular"
-  }, "date: ", "".concat(date()[0], " ").concat(date()[1], " ").concat(date()[2])), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "max-w-lg mt-10 mx-auto text-justify"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
-    className: "mb-5 regular"
-  }, " ", news.short_description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
-    className: "mb-5 regular"
-  }, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-    className: "w-full",
-    src: news.latest_image != null ? "/" + news.latest_image.path + "/" + news.latest_image.title : null,
-    alt: "err"
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
-    className: "mb-5 regular"
-  }, news.description)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "text-center mt-20"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
-    href: route("client.news.index"),
-    className: "regular text-center mx-auto"
-  }, "Back to news ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_icons_fi__WEBPACK_IMPORTED_MODULE_3__.FiArrowLeft, {
-    className: "inline-block h-5 w-5"
-  }))))));
+  return (
+    /*#__PURE__*/
+    // <layout seo={seo}>
+    react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_CursorFollower__WEBPACK_IMPORTED_MODULE_3__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", {
+      className: "py-32 relative wrapper"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+      style: {
+        width: "60%"
+      },
+      src: '/assets/images/projects/3.png',
+      alt: "",
+      className: "fixed left-1/2 -translate-x-1/2 top-40 -z-10 blur-xl  opacity-50"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      className: "text-center uppercase mb-5 text-3xl"
+    }, news.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      className: "text-center opacity-50 regular"
+    }, "date: ", "".concat(date()[0], " ").concat(date()[1], " ").concat(date()[2])), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      className: "max-w-lg mt-10 mx-auto text-justify"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
+      className: "mb-5 regular"
+    }, " ", news.short_description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
+      className: "mb-5 regular"
+    }, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+      className: "w-full",
+      src: news.latest_image != null ? "/" + news.latest_image.path + "/" + news.latest_image.title : null,
+      alt: "err"
+    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
+      className: "mb-5 regular"
+    }, news.description)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      className: "text-center mt-20"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+      href: route("client.news.index"),
+      className: "regular text-center mx-auto"
+    }, "Back to news ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_icons_fi__WEBPACK_IMPORTED_MODULE_4__.FiArrowLeft, {
+      className: "inline-block h-5 w-5"
+    }))))) // </layout>
+
+  );
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SingleNews);
