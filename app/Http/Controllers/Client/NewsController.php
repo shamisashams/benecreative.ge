@@ -67,7 +67,7 @@ class NewsController extends Controller
 
     public function show(string $locale, $slug)
     {
-        $news = News::where("status", 1)->where("id", $slug)->with(['file', 'translations', 'latestImage'])->firstOrFail();
+        $news = News::where("id", $slug)->with(['file', 'translations', 'latestImage'])->firstOrFail();
         // dd($news);
         // $lastNews = News::where("status", 1)->where('slug', '<>', $slug)->latest()->with(["file", "translations"])->take(3)->get();
         $page = Page::where('key', 'home')->firstOrFail();
