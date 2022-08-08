@@ -5,7 +5,7 @@ import Layout from "../Layouts/Layout";
 import { FiArrowLeft } from "react-icons/fi";
 
 const SingleNews = ({ seo, news }) => {
-    console.log(news);
+    // console.log(news);
     const date = () => {
         let z = news.created_at.split("-");
         z[2] = z[2].split(":");

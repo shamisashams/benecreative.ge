@@ -10,7 +10,7 @@ import { partners, team } from "../components/Data";
 import Layout from "../Layouts/Layout";
 
 const About = ({ seo, partners, team, category, images }) => {
-    console.log(category);
+    // console.log(category);
 
     const renderHTML = (rawHTML) => React.createElement("div", { dangerouslySetInnerHTML: { __html: rawHTML } });
     const sharedData = usePage().props.localizations;
