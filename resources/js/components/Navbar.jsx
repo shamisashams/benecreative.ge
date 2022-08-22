@@ -108,7 +108,6 @@ const Navbar = () => {
                             <div className="flex items-center mb-6">
 
                                 {/* <div className="selected mr-3 text-xl regular">
-
                                     <Link href={locale_urls["English"]}>
                                         {"en"}
                                     </Link>
