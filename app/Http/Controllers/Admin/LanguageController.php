@@ -167,9 +167,9 @@ class LanguageController extends Controller
      */
     public function destroy(string $locale, Language $language)
     {
-        // if ($language->default) {
-        //     return redirect(locale_route('language.index'))->with('danger', 'Can not delete default language.');
-        // }
+        if ($language->default) {
+            return redirect(locale_route('language.index'))->with('danger', 'Can not delete default language.');
+        }
         if (!$this->languageRepository->delete($language->id)) {
             return redirect(locale_route('language.show', $language->id))->with('danger', 'Language not deleted.');
         }
