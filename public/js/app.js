@@ -4227,7 +4227,7 @@ var Projects = function Projects(_ref) {
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
     "data-aos": "fade-up",
     className: "text-center max-w-3xl mx-auto mt-20 regular"
-  }, "We see every project as a chance to \u201Cleave our footprint\u201D and explore unique motion design techniques. We works with agencies and direct clients: furthermore our experienced team can manage any stage of production. We see every project as a chance to \u201Cleave our footprint\u201D and explore unique motion design techniques.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, renderHTML(__("client.projects_text", sharedData).replace(/(?:\r\n|\r|\n)/g, "<br>")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "parallax py-20  relative text-center"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "absolute left-0  w-full -z-10",

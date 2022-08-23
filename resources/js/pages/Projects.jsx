@@ -178,12 +178,19 @@ const Projects = ({
                         data-aos="fade-up"
                         className="text-center max-w-3xl mx-auto mt-20 regular"
                     >
-                        We see every project as a chance to “leave our
+                        {/* We see every project as a chance to “leave our
                         footprint” and explore unique motion design techniques.
                         We works with agencies and direct clients: furthermore
                         our experienced team can manage any stage of production.
                         We see every project as a chance to “leave our
-                        footprint” and explore unique motion design techniques.
+                        footprint” and explore unique motion design techniques. */}
+
+                        {renderHTML(
+                            __("client.projects_text", sharedData).replace(
+                                /(?:\r\n|\r|\n)/g,
+                                "<br>"
+                            )
+                        )}
                     </p>
                 </section>
 
