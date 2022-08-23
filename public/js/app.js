@@ -3288,7 +3288,7 @@ var About = function About(_ref) {
     className: "wrapper"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", {
     className: "opacity-50 text-lg mb-10"
-  }, "Our partners")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(swiper_react__WEBPACK_IMPORTED_MODULE_2__.Swiper, {
+  }, __("client.your_partners", sharedData))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(swiper_react__WEBPACK_IMPORTED_MODULE_2__.Swiper, {
     modules: [swiper__WEBPACK_IMPORTED_MODULE_4__.Autoplay],
     loop: true,
     autoplay: {
@@ -3356,7 +3356,7 @@ var About = function About(_ref) {
     className: "wrapper "
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", {
     className: "text-3xl mb-10"
-  }, "Meet our team"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", {
+  }, __("client.meet_our_team", sharedData)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", {
     className: "grid md:grid-cols-3 sm:grid-cols-2 gap-10 mb-20"
   }, team.data.map(function (item, index) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", {
