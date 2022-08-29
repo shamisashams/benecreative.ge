@@ -4702,7 +4702,7 @@ var CursorFollower = function CursorFollower() {
     outerScale: 0,
     hasBlendMode: true,
     innerStyle: {
-      mixBlendMode: "difference"
+      mixBlendMode: "overlay"
     },
     clickables: ["a", 'input[type="text"]', 'input[type="email"]', 'input[type="number"]', 'input[type="submit"]', 'input[type="image"]', "label[for]", "select", "textarea", "button", ".link"]
   });

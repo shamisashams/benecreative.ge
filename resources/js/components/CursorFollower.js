@@ -11,7 +11,7 @@ const CursorFollower = () => {
             outerScale={0}
             hasBlendMode={true}
             innerStyle={{
-                mixBlendMode: "difference",
+                mixBlendMode: "overlay",
             }}
             clickables={[
                 "a",
