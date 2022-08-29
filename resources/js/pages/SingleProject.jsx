@@ -57,7 +57,9 @@ const SingleProject = ({ seo, portfolio, category_name, sameproduct }) => {
                                 <div className="mr-32 regular text-custom-pink-500 uppercase">
                                     Duration
                                 </div>
-                                <div className="regular opacity-50 max-w-sm mb-5">{portfolio[0].duration} </div>
+                                <div className="regular opacity-50 max-w-sm mb-5">
+                                    {portfolio[0].duration}{" "}
+                                </div>
                             </div>
                             <div>
                                 <div className="mr-32 regular text-custom-pink-500 uppercase">
@@ -78,7 +80,9 @@ const SingleProject = ({ seo, portfolio, category_name, sameproduct }) => {
                             What you need to know for success
                         </h1>
                         <div className="sm:w-2/3 sm:ml-10" data-aos="fade-down">
-                            <div className="uppercase mb-5 regular mt-3">About project</div>
+                            <div className="uppercase mb-5 regular mt-3">
+                                About project
+                            </div>
                             <p className="opacity-50 text-justify regular leading-relaxed">
                                 {portfolio[0].about_project}
                             </p>
@@ -86,14 +90,13 @@ const SingleProject = ({ seo, portfolio, category_name, sameproduct }) => {
                     </div>
                 </section>
 
-
                 <section
                     ref={video}
                     className="w-screen h-screen relative  group transition-all duration-1000"
                 >
                     <div className="absolute h-96 w-full left-0 top-0 bg-gradient-to-b from-black to-transparent"></div>
                     <div className="absolute h-96 w-full left-0 bottom-0 bg-gradient-to-t from-black to-transparent group-hover:scale-y-0 transiton-all duration-500 origin-bottom"></div>
-                    {portfolio[0].video_url &&
+                    {portfolio[0].video_url && (
                         <iframe
                             width="100%"
                             height="100%"
@@ -103,15 +106,14 @@ const SingleProject = ({ seo, portfolio, category_name, sameproduct }) => {
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
                         ></iframe>
-                    }
-
-
+                    )}
                 </section>
 
-
-
                 <section className="py-20 text-center">
-                    <div data-aos="fade-up" className="uppercase text-4xl mb-10">
+                    <div
+                        data-aos="fade-up"
+                        className="uppercase text-4xl mb-10"
+                    >
                         Credits
                     </div>
                     <div
@@ -120,7 +122,10 @@ const SingleProject = ({ seo, portfolio, category_name, sameproduct }) => {
                     >
                         direction
                     </div>
-                    <div data-aos="fade-up" className="opacity-50 text-xl regular mb-5">
+                    <div
+                        data-aos="fade-up"
+                        className="opacity-50 text-xl regular mb-5"
+                    >
                         {portfolio[0].directions}
                     </div>
                     <div
@@ -129,7 +134,10 @@ const SingleProject = ({ seo, portfolio, category_name, sameproduct }) => {
                     >
                         design
                     </div>
-                    <div data-aos="fade-up" className="opacity-50 text-xl regular mb-5">
+                    <div
+                        data-aos="fade-up"
+                        className="opacity-50 text-xl regular mb-5"
+                    >
                         {portfolio[0].design}
                     </div>
                     <div
@@ -138,7 +146,10 @@ const SingleProject = ({ seo, portfolio, category_name, sameproduct }) => {
                     >
                         animation
                     </div>
-                    <div data-aos="fade-up" className="opacity-50 text-xl regular mb-5">
+                    <div
+                        data-aos="fade-up"
+                        className="opacity-50 text-xl regular mb-5"
+                    >
                         {portfolio[0].animation}
                     </div>
                     <div
@@ -147,27 +158,26 @@ const SingleProject = ({ seo, portfolio, category_name, sameproduct }) => {
                     >
                         music & sound design
                     </div>
-                    <div data-aos="fade-up" className="opacity-50 text-xl regular mb-5">
+                    <div
+                        data-aos="fade-up"
+                        className="opacity-50 text-xl regular mb-5"
+                    >
                         {portfolio[0].music}
                     </div>
                 </section>
                 <div className="parallax projectWrapper text-center">
-
-
                     {portfolio[0].files.map((e, i) => {
                         const img =
-                            e != null
-                                ? "/" +
-                                e.path +
-                                "/" +
-                                e.title
-                                : null
+                            e != null ? "/" + e.path + "/" + e.title : null;
 
                         let bigimg = [0, 3, 6];
                         if (bigimg.some((e) => e == i)) {
                             return (
                                 // <h2>asdsad</h2>
-                                <div className="inline-block w-full h-auto mb-10" key={i}>
+                                <div
+                                    className="inline-block w-full h-auto mb-10"
+                                    key={i}
+                                >
                                     <img
                                         data-aos="zoom-in"
                                         className="w-full h-full object-cover"
@@ -175,7 +185,7 @@ const SingleProject = ({ seo, portfolio, category_name, sameproduct }) => {
                                         alt="err"
                                     />
                                 </div>
-                            )
+                            );
                         } else {
                             return (
                                 <div
@@ -189,9 +199,8 @@ const SingleProject = ({ seo, portfolio, category_name, sameproduct }) => {
                                         alt="err"
                                     />
                                 </div>
-                            )
+                            );
                         }
-
                     })}
 
                     {/* <div className="inline-block w-full h-auto mb-10">
@@ -209,9 +218,6 @@ const SingleProject = ({ seo, portfolio, category_name, sameproduct }) => {
                             alt="err"
                         />
                     </div> */}
-
-
-
                 </div>
                 <section className="projectWrapper py-20">
                     <div className="text-center uppercase text-4xl mb-10">
@@ -219,20 +225,24 @@ const SingleProject = ({ seo, portfolio, category_name, sameproduct }) => {
                     </div>
                     <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-16 mb-20">
                         {sameproduct.map((item, index) => {
-
                             return (
-                                <Link href={route(
-                                    "client.showsingleproject.show",
-                                    item.id
-                                )} key={index}>
+                                <Link
+                                    href={route(
+                                        "client.showsingleproject.show",
+                                        item.id
+                                    )}
+                                    key={index}
+                                >
                                     <div className="w-full h-60 mb-5 overflow-hidden">
                                         <img
-                                            src={item.files[0] != null
-                                                ? "/" +
-                                                item.files[0].path +
-                                                "/" +
-                                                item.files[0].title
-                                                : null}
+                                            src={
+                                                item.files[0] != null
+                                                    ? "/" +
+                                                      item.files[0].path +
+                                                      "/" +
+                                                      item.files[0].title
+                                                    : null
+                                            }
                                             alt=""
                                             className=" w-full h-full object-cover transition-all duration-700 hover:scale-125"
                                         />
@@ -246,7 +256,7 @@ const SingleProject = ({ seo, portfolio, category_name, sameproduct }) => {
                     </div>
                 </section>
             </div>
-        </Layout >
+        </Layout>
     );
 };
 
