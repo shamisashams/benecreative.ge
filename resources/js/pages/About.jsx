@@ -136,7 +136,7 @@ const About = ({ seo, partners, team, category, images }) => {
                 </section>
                 <section className="py-20">
                     <div className="wrapper">
-                        <div className="opacity-50 text-lg mb-10">Our partners</div>
+                        <div className="opacity-50 text-lg mb-10">{__("client.your_partners", sharedData)}</div>
                     </div>
                     <Swiper
                         modules={[Autoplay]}
@@ -224,7 +224,7 @@ const About = ({ seo, partners, team, category, images }) => {
                     })}
                 </section>
                 <section className="wrapper ">
-                    <div className="text-3xl mb-10">Meet our team</div>
+                    <div className="text-3xl mb-10">{__("client.meet_our_team", sharedData)}</div>
                     <div className="grid md:grid-cols-3 sm:grid-cols-2 gap-10 mb-20">
                         {team.data.map((item, index) => {
                             return (

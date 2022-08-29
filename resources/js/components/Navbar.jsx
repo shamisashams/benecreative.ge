@@ -107,8 +107,13 @@ const Navbar = () => {
                         <div className="relative z-10">
                             <div className="flex items-center mb-6">
 
-                                <div className="selected mr-3 text-xl regular">{currentLocale}</div>
-                                {currentLocale == "ge" ? (
+                                {/* <div className="selected mr-3 text-xl regular">
+                                    <Link href={locale_urls["English"]}>
+                                        {"en"}
+                                    </Link>
+                                </div> */}
+
+                                {/* {currentLocale == "ge" ? (
                                     <Link href={locale_urls["English"]}>
                                         {"en"}
 
@@ -117,7 +122,7 @@ const Navbar = () => {
                                     <Link href={locale_urls["ქართული"]}>
                                         {"ge"}
                                     </Link>
-                                )}
+                                )} */}
                             </div>
                             {navigations.map((nav, index) => {
                                 return (

@@ -92,7 +92,7 @@
                                             <td>
 
 
-                                                @if(!$language->default)
+                                                {{-- @if(!$language->default) --}}
                                                     <a href="{{locale_route('language.edit',$language->id)}}"
                                                        class="pl-3">
                                                         <i class="fa fa-edit">შეცვლა</i>
@@ -102,7 +102,7 @@
                                                        onclick="return confirm('Are you sure?')" class="pl-3">
                                                         <i class="fa fa-edit">წაშლა</i>
                                                     </a>
-                                                @endif
+                                                {{-- @endif --}}
                                             </td>
                                         </tr>
                                     @endforeach
