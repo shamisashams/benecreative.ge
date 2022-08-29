@@ -11,8 +11,6 @@
 use App\Http\Controllers\Admin\Auth\LoginController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\LanguageController;
-use App\Http\Controllers\Admin\OwnerAppController;
-use App\Http\Controllers\Admin\EvaluationController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\NewsController;
@@ -25,13 +23,10 @@ use App\Http\Controllers\Client\AboutUsController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Client\ServiceController;
-use App\Http\Controllers\Admin\IronController1;
-use App\Http\Controllers\Client\IronController;
 use App\Http\Controllers\Client\PortfolioController;
 use App\Http\Controllers\Client\DocumentationController;
 use App\Http\Controllers\Client\OurTeamController;
 use App\Http\Controllers\Client\LoginPageController;
-use App\Http\Controllers\Client\TilesController;
 
 
 
@@ -67,10 +62,7 @@ Route::prefix('{locale?}')
                 Route::resource('category', \App\Http\Controllers\Admin\CategoryController::class);
                 Route::get('category/{category}/destroy', [\App\Http\Controllers\Admin\CategoryController::class, 'destroy'])->name('category.destroy');
 
-                // brands
-                Route::resource('brand', \App\Http\Controllers\Admin\BrandController::class);
-                Route::get('brand/{brand}/destroy', [\App\Http\Controllers\Admin\BrandController::class, 'destroy'])->name('brand.destroy');
-                //
+
 
                 Route::resource('staff', \App\Http\Controllers\Admin\StaffController::class);
                 Route::get('staff/{staff}/destroy', [\App\Http\Controllers\Admin\StaffController::class, 'destroy'])->name('staff.destroy');
@@ -84,12 +76,7 @@ Route::prefix('{locale?}')
                 Route::resource('team', \App\Http\Controllers\Admin\TeamController::class);
                 Route::get('team/{team}/destroy', [\App\Http\Controllers\Admin\TeamController::class, 'destroy'])->name('team.destroy');
 
-                //iron sizes
-                Route::resource('iron', \App\Http\Controllers\Admin\IronController1::class);
-                Route::post('create_iron', [IronController1::class, 'create'])->name("admin.irons.create");
-                Route::get('destroy/{id}', [IronController1::class, 'destroy'])->name("admin.irons.del");
-                Route::post('update', [IronController1::class, 'update'])->name("admin.irons.update");
-                Route::get('search', [IronController1::class, 'search'])->name("admin.irons.search");
+
 
                 // Product
                 Route::resource('product', \App\Http\Controllers\Admin\ProductController::class);
@@ -129,7 +116,7 @@ Route::prefix('{locale?}')
                 Route::get('classification/{classification}/destroy', [\App\Http\Controllers\Admin\ClassificationController::class, 'destroy'])->name('classification.destroy');
             });
         });
-        Route::middleware(['active'])->group(function () {
+        Route::middleware(['active', 'cache.headers:private;max_age=3600'])->group(function () {
 
             // Home Page
             Route::get('', [HomeController::class, 'index'])->name('client.home.index')->withoutMiddleware('active');

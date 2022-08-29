@@ -25,11 +25,8 @@ class PasswordController extends Controller
     /**
      * @param SettingRepositoryInterface $settingRepository
      */
-    public function __construct(
-
-    )
+    public function __construct()
     {
-
     }
 
 
@@ -43,9 +40,7 @@ class PasswordController extends Controller
             'settings' => $this->settingRepository->getData($request, ['translations'])
         ]);*/
 
-        return view('admin.nowa.views.password.index', [
-
-        ]);
+        return view('admin.nowa.views.password.index', []);
     }
 
 
@@ -97,12 +92,12 @@ class PasswordController extends Controller
 
         $request->validate([
             'c_pass' => ['required', new MatchOldPassword()],
-            'n_pass' => ['required','min:5'],
+            'n_pass' => ['required', 'min:5'],
             'r_pass' => ['same:n_pass']
         ]);
         //dd($request->all());
 
-        User::find(auth()->user()->id)->update(['password'=> Hash::make($request->n_pass)]);
+        User::find(auth()->user()->id)->update(['password' => Hash::make($request->n_pass)]);
 
 
         return redirect(locale_route('password.index'))->with('success', __('admin.update_successfully'));

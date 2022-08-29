@@ -1,4 +1,5 @@
 <?php
+
 /**
  *  app/Http/Controllers/Admin/ProductController.php
  *
@@ -47,8 +48,7 @@ class CustomerController extends Controller
     public function __construct(
         CustomerRepository $customerRepository,
         SubclassRepository $subclassRepository
-    )
-    {
+    ) {
         $this->customerRepository = $customerRepository;
         $this->subclassRepository = $subclassRepository;
     }
@@ -114,7 +114,7 @@ class CustomerController extends Controller
         $saveData = Arr::except($request->except('_token'), []);
         $saveData['status'] = isset($saveData['status']) && (bool)$saveData['status'];
 
-        if ($request->password !== ''){
+        if ($request->password !== '') {
             $saveData['password'] = Hash::make($request->password);
         } else unset($saveData['password']);
 
@@ -133,7 +133,6 @@ class CustomerController extends Controller
         }
 
         return redirect(locale_route('customer.index', $customer->id))->with('success', __('admin.create_successfully'));
-
     }
 
     /**
@@ -225,8 +224,9 @@ class CustomerController extends Controller
         return redirect(locale_route('customer.index'))->with('success', __('admin.delete_message'));
     }
 
-    public function docDelete($locale,$id){
-        $file = File::query()->where('id',$id)->firstOrFail();
+    public function docDelete($locale, $id)
+    {
+        $file = File::query()->where('id', $id)->firstOrFail();
         $id = $file->fileable_id;
         //dd($file);
         if (Storage::exists('public/Customer/' . $file->fileable_id . '/files/' . $file->title)) {
@@ -234,11 +234,11 @@ class CustomerController extends Controller
         }
 
         $file->delete();
-        return redirect(locale_route('customer.edit',$id))->with('success', __('admin.delete_message'));
-
+        return redirect(locale_route('customer.edit', $id))->with('success', __('admin.delete_message'));
     }
 
-    public function createSubClass($locale,Customer $customer){
+    public function createSubClass($locale, Customer $customer)
+    {
 
         //dd($customer);
         $subclass = $this->subclassRepository->model;
@@ -258,9 +258,10 @@ class CustomerController extends Controller
         ]);
     }
 
-    public function storeSubClass(Request $request, $locale,  Customer $customer){
+    public function storeSubClass(Request $request, $locale,  Customer $customer)
+    {
         $request->validate([
-           'class_id' => 'required'
+            'class_id' => 'required'
         ]);
 
         $saveData = Arr::except($request->except('_token'), []);
@@ -284,11 +285,11 @@ class CustomerController extends Controller
         }
 
         return redirect(locale_route('customer.edit', $customer->id))->with('success', __('admin.create_successfully'));
-
     }
 
-    public function editSubClass($locale,Customer $customer, Subclass $subclass){
-        $url = locale_route('subclass.update', [$customer->id,$subclass->id], false);
+    public function editSubClass($locale, Customer $customer, Subclass $subclass)
+    {
+        $url = locale_route('subclass.update', [$customer->id, $subclass->id], false);
         $method = 'PUT';
 
         /*return view('admin.pages.product.form', [
@@ -307,8 +308,9 @@ class CustomerController extends Controller
         ]);
     }
 
-    public function updateSubClass(Request $request, string $locale, Customer $customer, Subclass $subclass){
-//dd($request->all());
+    public function updateSubClass(Request $request, string $locale, Customer $customer, Subclass $subclass)
+    {
+        //dd($request->all());
         $saveData = Arr::except($request->except('_token'), []);
         $saveData['status'] = isset($saveData['status']) && (bool)$saveData['status'];
 
@@ -329,11 +331,11 @@ class CustomerController extends Controller
         return redirect(locale_route('customer.edit', $customer->id))->with('success', __('admin.update_successfully'));
     }
 
-    public function destroySubClass(string $locale, Customer $customer,Subclass $subclass)
+    public function destroySubClass(string $locale, Customer $customer, Subclass $subclass)
     {
         $docs = $subclass->docs;
 
-        foreach ($docs as $doc){
+        foreach ($docs as $doc) {
             if (Storage::exists('public/Subclass/' . $doc->fileable_id . '/files/' . $doc->title)) {
                 Storage::delete('public/Subclass/' . $doc->fileable_id . '/files/' . $doc->title);
             }
@@ -343,11 +345,12 @@ class CustomerController extends Controller
         if (!$this->subclassRepository->delete($subclass->id)) {
             return redirect(locale_route('customer.edit', $customer->id))->with('danger', __('admin.not_delete_message'));
         }
-        return redirect(locale_route('customer.edit',$customer->id))->with('success', __('admin.delete_message'));
+        return redirect(locale_route('customer.edit', $customer->id))->with('success', __('admin.delete_message'));
     }
 
-    public function subclassDocDelete($locale,Customer $customer, Subclass $subclass, $id){
-        $file = File::query()->where('id',$id)->firstOrFail();
+    public function subclassDocDelete($locale, Customer $customer, Subclass $subclass, $id)
+    {
+        $file = File::query()->where('id', $id)->firstOrFail();
         $id = $file->fileable_id;
         //dd($file);
         if (Storage::exists('public/Subclass/' . $file->fileable_id . '/files/' . $file->title)) {
@@ -355,9 +358,6 @@ class CustomerController extends Controller
         }
 
         $file->delete();
-        return redirect(locale_route('subclass.update',[$customer->id, $subclass->id]))->with('success', __('admin.delete_message'));
-
+        return redirect(locale_route('subclass.update', [$customer->id, $subclass->id]))->with('success', __('admin.delete_message'));
     }
-
-
 }
