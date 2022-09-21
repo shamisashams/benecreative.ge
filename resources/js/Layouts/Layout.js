@@ -17,6 +17,16 @@ export default function Layout({ children, seo = null }) {
 
     const { pathname } = usePage().props;
 
+    const [loading, setLoading] = useState(pathname == route("client.home.index") ? true : false);
+    if (pathname == route("client.home.index")) {
+        Inertia.on('finish',
+            setTimeout(() => {
+                setLoading(false);
+            }, 500)
+        )
+    }
+
+
     if (seo) {
         setSeoData(seo);
     }
@@ -29,15 +39,86 @@ export default function Layout({ children, seo = null }) {
 
 
     return (
-<>
-{/*<Router>*/}
-{/*<Fragment>*/}
-<CursorFollower />
-<Navbar />
-{children}
-<Footer />
-{/*</Fragment>*/}
-{/*</Router>*/}
-</>
+        <>
+            {loading ? (
+                <div className="preloader">
+                    <div className="preloader__ring">
+                        <div className="preloader__sector">L</div>
+                        <div className="preloader__sector">o</div>
+                        <div className="preloader__sector">a</div>
+                        <div className="preloader__sector">d</div>
+                        <div className="preloader__sector">i</div>
+                        <div className="preloader__sector">n</div>
+                        <div className="preloader__sector">g</div>
+                        <div className="preloader__sector">.</div>
+                        <div className="preloader__sector">.</div>
+                        <div className="preloader__sector">.</div>
+                        <div className="preloader__sector"></div>
+                        <div className="preloader__sector"></div>
+                        <div className="preloader__sector"></div>
+                        <div className="preloader__sector"></div>
+                        <div className="preloader__sector"></div>
+                        <div className="preloader__sector"></div>
+                        <div className="preloader__sector"></div>
+                        <div className="preloader__sector"></div>
+                        <div className="preloader__sector"></div>
+                        <div className="preloader__sector"></div>
+                        <div className="preloader__sector"></div>
+                        <div className="preloader__sector"></div>
+                        <div className="preloader__sector"></div>
+                        <div className="preloader__sector"></div>
+                        <div className="preloader__sector"></div>
+                        <div className="preloader__sector"></div>
+                        <div className="preloader__sector"></div>
+                        <div className="preloader__sector"></div>
+                        <div className="preloader__sector"></div>
+                        <div className="preloader__sector"></div>
+                    </div>
+                    <div className="preloader__ring">
+                        <div className="preloader__sector">L</div>
+                        <div className="preloader__sector">o</div>
+                        <div className="preloader__sector">a</div>
+                        <div className="preloader__sector">d</div>
+                        <div className="preloader__sector">i</div>
+                        <div className="preloader__sector">n</div>
+                        <div className="preloader__sector">g</div>
+                        <div className="preloader__sector">.</div>
+                        <div className="preloader__sector">.</div>
+                        <div className="preloader__sector">.</div>
+                        <div className="preloader__sector"></div>
+                        <div className="preloader__sector"></div>
+                        <div className="preloader__sector"></div>
+                        <div className="preloader__sector"></div>
+                        <div className="preloader__sector"></div>
+                        <div className="preloader__sector"></div>
+                        <div className="preloader__sector"></div>
+                        <div className="preloader__sector"></div>
+                        <div className="preloader__sector"></div>
+                        <div className="preloader__sector"></div>
+                        <div className="preloader__sector"></div>
+                        <div className="preloader__sector"></div>
+                        <div className="preloader__sector"></div>
+                        <div className="preloader__sector"></div>
+                        <div className="preloader__sector"></div>
+                        <div className="preloader__sector"></div>
+                        <div className="preloader__sector"></div>
+                        <div className="preloader__sector"></div>
+                        <div className="preloader__sector"></div>
+                        <div className="preloader__sector"></div>
+                    </div>
+                </div>
+            ) : (
+                <>
+                    {/*<Router>*/}
+                    {/*<Fragment>*/}
+                    <CursorFollower />
+                    <Navbar />
+                    {children}
+                    <Footer />
+                    {/*</Fragment>*/}
+                    {/*</Router>*/}
+                </>
+            )}
+        </>
     );
 }

@@ -116,7 +116,7 @@ Route::prefix('{locale?}')
                 Route::get('classification/{classification}/destroy', [\App\Http\Controllers\Admin\ClassificationController::class, 'destroy'])->name('classification.destroy');
             });
         });
-        Route::middleware(['active', 'cache.headers:private;max_age=3600'])->group(function () {
+        Route::middleware(['active'])->group(function () {
 
             // Home Page
             Route::get('', [HomeController::class, 'index'])->name('client.home.index')->withoutMiddleware('active');

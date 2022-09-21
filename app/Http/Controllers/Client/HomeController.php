@@ -21,7 +21,6 @@ class HomeController extends Controller
 {
     public function index(Request $request)
     {
-
         $portfolio = Portfolio::where("status", 0)->with(['files', 'translations', 'latestImage'])->paginate(6);
 
         $page = Page::where('key', 'home')->firstOrFail();
