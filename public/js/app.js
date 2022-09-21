@@ -3083,7 +3083,7 @@ function Layout(_ref) {
   if (pathname == route("client.home.index")) {
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.on('finish', setTimeout(function () {
       setLoading(false);
-    }, 0));
+    }, 500));
   } // useEffect(() => {
   //     setLoading(true);
   //     setTimeout(() => {
@@ -3108,8 +3108,8 @@ function Layout(_ref) {
     aos__WEBPACK_IMPORTED_MODULE_9___default().init({
       duration: 2000
     });
-  }, []);
-  console.log((0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props);
+  }, []); // console.log(usePage().props);
+
   var currentLocale = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props.currentLocale;
   /*if (currentLocale == "ge") {
       import("./AppGeo.css");
@@ -3118,131 +3118,131 @@ function Layout(_ref) {
   }*/
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader"
+    className: "preloader"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__ring"
+    className: "preloader__ring"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }, "L"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }, "o"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }, "a"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }, "d"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }, "i"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }, "n"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }, "g"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }, "."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }, "."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }, "."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__ring"
+    className: "preloader__ring"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }, "L"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }, "o"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }, "a"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }, "d"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }, "i"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }, "n"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }, "g"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }, "."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }, "."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }, "."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    "class": "preloader__sector"
+    className: "preloader__sector"
   }))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_CursorFollower__WEBPACK_IMPORTED_MODULE_8__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Navbar__WEBPACK_IMPORTED_MODULE_5__["default"], null), children, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Footer__WEBPACK_IMPORTED_MODULE_6__["default"], null)));
 }
 
