@@ -3,10 +3,20 @@ import React from "react";
 // import { Link, useLocation } from "react-router-dom";
 import { Link, usePage } from "@inertiajs/inertia-react";
 
-const Footer = ({ seo, page, }) => {
+const Footer = ({ seo, page }) => {
     const { pathname } = usePage().props;
     // const { errors, gphone, gemail, gaddress } = usePage().props;
-    const { errors, gphone, gemail, gaddress, gfacebook, ginstagram, gtwitter, gbehance, gdribbble } = usePage().props;
+    const {
+        errors,
+        gphone,
+        gemail,
+        gaddress,
+        gfacebook,
+        ginstagram,
+        gtwitter,
+        gbehance,
+        gdribbble,
+    } = usePage().props;
 
     const socialMedia = [
         {
@@ -20,7 +30,6 @@ const Footer = ({ seo, page, }) => {
         {
             icon: "/assets/images/sm/ig.svg",
             link: ginstagram.value,
-
         },
         {
             icon: "/assets/images/sm/dr.svg",
@@ -31,7 +40,6 @@ const Footer = ({ seo, page, }) => {
             link: gdribbble.value,
         },
     ];
-
 
     // const socialMedia = [
     //     {
@@ -70,12 +78,20 @@ const Footer = ({ seo, page, }) => {
     return (
         <div
             className="wrapper py-10 text-center "
-            style={{ display: pathname === route("client.contact.index") && "none" }}
+            style={{
+                display: pathname === route("client.contact.index") && "none",
+            }}
         >
             <Link href="/">
-                <img src={'/assets/images/logo/1.png'} alt="" className="mx-auto mb-10" />
+                <img
+                    src={"/assets/images/logo/1.png"}
+                    alt=""
+                    className="mx-auto mb-10"
+                />
             </Link>
-            <div className="uppercase sm:text-4xl text-2xl mb-10">{__("client.footer_getintouch", sharedData)}</div>
+            <div className="uppercase sm:text-2xl text-xl mb-10">
+                {__("client.footer_getintouch", sharedData)}
+            </div>
 
             <div className=" flex items-center justify-center mb-8">
                 {socialMedia.map((sm, index) => {
@@ -88,7 +104,10 @@ const Footer = ({ seo, page, }) => {
                     }
                 })}
             </div>
-            <a className="mb-2 block regular" href={`mailto:${contactInfo.email}`}>
+            <a
+                className="mb-2 block regular"
+                href={`mailto:${contactInfo.email}`}
+            >
                 {contactInfo.email}
             </a>
             <a className="mb-2 block regular" href={`tel:${contactInfo.tel}`}>
