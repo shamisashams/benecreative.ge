@@ -3084,21 +3084,7 @@ function Layout(_ref) {
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.on('finish', setTimeout(function () {
       setLoading(false);
     }, 500));
-  } // useEffect(() => {
-  //     setLoading(true);
-  //     setTimeout(() => {
-  //         setLoading(false);
-  //     }, 3000);
-  // }, []);
-  // useEffect(() => {
-  //     setLoading(true);
-  //     fetch("https://api.quotable.io/random")
-  //         .then((res) => res.json())
-  //         .then((data) => {
-  //             setLoading(false);
-  //         });
-  // }, []);
-
+  }
 
   if (seo) {
     (0,_SetSeoData__WEBPACK_IMPORTED_MODULE_7__["default"])(seo);
@@ -3111,12 +3097,6 @@ function Layout(_ref) {
   }, []); // console.log(usePage().props);
 
   var currentLocale = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props.currentLocale;
-  /*if (currentLocale == "ge") {
-      import("./AppGeo.css");
-  } else if (currentLocale == "ru") {
-      import("./AppRus.css");
-  }*/
-
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "preloader"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {

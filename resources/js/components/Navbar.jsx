@@ -106,23 +106,6 @@ const Navbar = () => {
                     <div className=" h-full max-w-7xl mx-auto flex items-center justify-between">
                         <div className="relative z-10">
                             <div className="flex items-center mb-6">
-
-                                {/* <div className="selected mr-3 text-xl regular">
-                                    <Link href={locale_urls["English"]}>
-                                        {"en"}
-                                    </Link>
-                                </div> */}
-
-                                {/* {currentLocale == "ge" ? (
-                                    <Link href={locale_urls["English"]}>
-                                        {"en"}
-
-                                    </Link>
-                                ) : (
-                                    <Link href={locale_urls["ქართული"]}>
-                                        {"ge"}
-                                    </Link>
-                                )} */}
                             </div>
                             {navigations.map((nav, index) => {
                                 return (
@@ -219,6 +202,7 @@ const Navbar = () => {
                     <Link href={route("client.home.index")}>
                         <img src={'/assets/images/logo/1.png'} alt="" />
                     </Link>
+
                     <button
                         onClick={toggleMenu}
                         className={`py-2 menuButton group w-10 ${showMenu && "close"}`}

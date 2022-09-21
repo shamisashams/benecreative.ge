@@ -14,6 +14,7 @@ import Aos from "aos";
 import { Route } from "react-router-dom";
 
 export default function Layout({ children, seo = null }) {
+
     const { pathname } = usePage().props;
 
     const [loading, setLoading] = useState(pathname == route("client.home.index") ? true : false);
@@ -26,21 +27,6 @@ export default function Layout({ children, seo = null }) {
     }
 
 
-    // useEffect(() => {
-    //     setLoading(true);
-    //     setTimeout(() => {
-    //         setLoading(false);
-    //     }, 3000);
-    // }, []);
-    // useEffect(() => {
-    //     setLoading(true);
-    //     fetch("https://api.quotable.io/random")
-    //         .then((res) => res.json())
-    //         .then((data) => {
-    //             setLoading(false);
-    //         });
-    // }, []);
-
     if (seo) {
         setSeoData(seo);
     }
@@ -51,11 +37,6 @@ export default function Layout({ children, seo = null }) {
     // console.log(usePage().props);
     const { currentLocale } = usePage().props;
 
-    /*if (currentLocale == "ge") {
-        import("./AppGeo.css");
-    } else if (currentLocale == "ru") {
-        import("./AppRus.css");
-    }*/
 
     return (
         <>
